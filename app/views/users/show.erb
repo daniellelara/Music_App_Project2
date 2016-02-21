@@ -7,3 +7,7 @@
 <p><%= @user.name %></p>
 <p><%= @user.email %></p>
 <p><%= @user.city %></p>
+<form method="post" action="/users/<%= @users.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn btn-default">
+</form>

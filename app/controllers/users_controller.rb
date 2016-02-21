@@ -52,3 +52,8 @@ put '/users/:id' do
   end
 end
 
+delete "/user/:id" do
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect("/")
+end
