@@ -52,8 +52,10 @@ put '/users/:id' do
   end
 end
 
-delete "/user/:id" do
+delete "/users/:id" do
+  authorize!
   @user = User.find(params[:id])
+  session.clear
   @user.destroy
   redirect("/")
 end
