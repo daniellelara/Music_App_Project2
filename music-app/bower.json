@@ -1,0 +1,21 @@
+{
+  "name": "music-app",
+  "homepage": "https://github.com/daniellelara/WDI_LDN_18_HOMEWORK",
+  "authors": [
+    "daniellelara <daniellelaragourgey@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

@@ -1,0 +1,8 @@
+<h2><%= @user.username %></h2>
+<% if @user.image %>
+  <img class="media-object" src="<%= @user.image %>" alt="<%= @user.username %>'s image">
+<% else %>
+  <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
+<% end %>
+<p><%= @user.name %></p>
+<p><%= @user.email %></p>
