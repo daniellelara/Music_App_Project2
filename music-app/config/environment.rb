@@ -14,8 +14,6 @@ use Sass::Plugin::Rack
 register Sinatra::AssetPack
 assets do
   js :application, [
-    '/bower_components/jquery/dist/jquery.min.js',
-    '/bower_components/pure/js/pure.min.js',
     '/js/app.js'
   ]
   css :application, [

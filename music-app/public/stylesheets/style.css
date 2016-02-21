@@ -1,5 +1,5 @@
-body { background-color: grey; }
+body { background-color: #8b8383; font-family: helvetica; }
 
-.custom-restricted { height: 80px; background: white; color: grey; border-radius: 4px; }
+.custom-restricted { height: 80px; background: white; color: #8b8383; border-radius: 4px; font-family: helvetica; }
 
 /*# sourceMappingURL=style.css.map */
