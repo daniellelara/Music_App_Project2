@@ -1,0 +1,22 @@
+<form id="add_track" class="pure-form pure-form-stacked" method="post" action="/tracks">
+<input type="hidden" name="_method" value="put">
+  
+    <fieldset>
+        <legend>add track</legend>
+
+        <label for="title">title</label>
+        <input name="track[title]" type="text" class="form-control" id="tracktitle"  value="<%= @track.title %>">
+
+        <label for="artist">artist</label>
+        <input name="track[artist]" type="text" class="form-control" id="artist" value="<%= @track.artist %>">
+
+        <label for="file">file</label>
+        <input name="track[file]" type="text" class="form-control" id="file" value="<%= @track.file %>" >
+
+        <label for="genre">genre</label>
+        <input name="track[genre]" type="text" class="form-control" id="genre"  value="<%= @track.file %>">
+
+
+        <button type="submit" class="pure-button pure-button-primary">update</button>
+    </fieldset>
+</form>
