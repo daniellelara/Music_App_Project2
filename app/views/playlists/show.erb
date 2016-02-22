@@ -1,0 +1,17 @@
+<h2><%= @playlist.title</h2>
+<ul class="media-list">
+  <% if !!@tracks %>
+  <% @tracks.each do |track| %>
+    <li class="media">
+      <canvas id="canvas" width="300" height="300">
+        An alternative text describing what your canvas displays. 
+      </canvas>
+      <audio src="/audio/<%= track.file %>" id="audio" controls></audio>
+      <p><%= track.title %> / <%= track.artist %> </p>
+      <a href="/tracks/<%= track.id %>">Full</a>
+    </li> 
+   <% else %>
+   <li><p>Please add some <a href="/tracks">tracks</a></p></li> 
+        
+  <% end %>
+</ul>

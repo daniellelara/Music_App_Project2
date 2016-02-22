@@ -1,6 +1,6 @@
 <h2><%= @user.username %></h2>
-<% if @user.image %>
-  <img class="media-object" src="<%= @user.image %>" alt="<%= @user.username %>'s image">
+<% if @user.image_identifier %>
+  <img class="media-object" src="/uploads/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150>
 <% else %>
   <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
 <% end %>
@@ -11,3 +11,5 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete" class="btn btn-default">
 </form>
+<p><a href="/tracks">my tracks</a></p>
+<p><a href="/playlists">my playlists</a></p>

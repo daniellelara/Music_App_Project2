@@ -1,13 +1,22 @@
 <h2>my tracks</h2>
+<p><a href="/tracks/new">add track</a></p>
+<p><a href="/playlists">my playlists</a></p>
 <ul class="media-list">
   <% @tracks.each do |track| %>
     <li class="media">
       <canvas id="canvas" width="300" height="300">
         An alternative text describing what your canvas displays. 
       </canvas>
-      <audio src="/audio/<%= track.file %>" id="audio" controls></audio>
+      <audio src="/uploads/audio/<%= track.file_identifier %>" id="audio" controls></audio>
       <p><%= track.title %> / <%= track.artist %> </p>
-      
+      <a href="/tracks/<%= track.id %>">Full</a>
+      <a href="/tracks/playlist/<%= track.id %>">add to playlist</a>
+      <% if track.image_identifier %>
+        <img class="media-object" src="/uploads/images/<%= track.image_identifier %>" width=50 height=50>
+      <% else %>
+        <img class="media-object" src="/uploads/HO6-anika.jpg" width=50 height=50>
+      <% end %>  
+               
     </li>  
         
   <% end %>

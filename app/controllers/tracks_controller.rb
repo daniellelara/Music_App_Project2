@@ -27,26 +27,25 @@ post "/tracks" do
   end
 end
 
-# SHOW
+#SHOW
 get "/tracks/:id" do
   authorize!
   @track = Track.find(params[:id])
-  if @track.id == session[:track_id]
     erb :"tracks/show"
-  else
-    redirect "/tracks"
-  end
+  
 end
+#add track to playlist
+get "tracks/:id/playlist" do
+  authorize!
+  @playlist = @current_user.playlists
+  erb :"tracks/playlist"
+end   
 
 # EDIT
 get "/tracks/:id/edit" do
   authorize!
-  if @track.id == session[:track_id]
     @track = Track.find(params[:id])
     erb :"tracks/edit"
-  else
-    redirect "/tracks"
-  end  
 end
 
 # UPDATE

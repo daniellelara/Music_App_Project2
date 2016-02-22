@@ -6,4 +6,6 @@ body { background-color: #8b8383; font-family: "HelveticaNeue-Light"; background
 
 input { color: #333; }
 
+.search { float: right; }
+
 /*# sourceMappingURL=style.css.map */

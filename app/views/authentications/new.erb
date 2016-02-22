@@ -5,7 +5,7 @@
     <%= error %>
   </div>
 <% end %>
-<form id="register" class="pure-form pure-form-stacked" method="post" action="/register">
+<form id="register" enctype="multipart/form-data" class="pure-form pure-form-stacked" method="post" action="/register">
   
     <fieldset>
         <legend>sign up</legend>
@@ -17,7 +17,7 @@
         <input name="user[username]" type="text" class="form-control" id="username" placeholder="Username">
 
         <label for="image">image</label>
-        <input name="user[image]" type="file" class="form-control" id="image" >
+        <input name="user[image]" type="file" class="form-control" id="image" input type="file">
 
         <label for="email">e-mail address</label>
         <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email">
