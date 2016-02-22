@@ -10,7 +10,17 @@
       <audio src="/uploads/audio/<%= track.file_identifier %>" id="audio" controls></audio>
       <p><%= track.title %> / <%= track.artist %> </p>
       <a href="/tracks/<%= track.id %>">Full</a>
-      <a href="/tracks/playlist/<%= track.id %>">add to playlist</a>
+
+      <form method="POST" action="/tracks/<%= track.id %>">
+        <input type="hidden" name="_method" value="PUT">
+        <select name="playlist_id">
+          <% current_user.playlists.each do |playlist| %>
+            <option value="<%= playlist.id %>"><%= playlist.title %></option>
+          <% end %>
+        </select>
+        <input type="submit" value="update">
+      </form>
+      <a href="/tracks/<%= track.id %>/playlist">add to playlist</a>
       <% if track.image_identifier %>
         <img class="media-object" src="/uploads/images/<%= track.image_identifier %>" width=50 height=50>
       <% else %>

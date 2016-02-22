@@ -18,9 +18,14 @@ post "/tracks" do
   authorize!
 
   @track = Track.new(params[:track])
+
+  if(params[:playlist_id])
+    playlist = Playlist.find(params[:playlist_id])
+  end
   
   if @track.save
     @track.users << @current_user
+    @track.playlist << playlist if playlist
     redirect "/tracks"
   else
     erb :"tracks/index"
@@ -35,9 +40,10 @@ get "/tracks/:id" do
   
 end
 #add track to playlist
-get "tracks/:id/playlist" do
+get "/tracks/:id/playlist" do
   authorize!
-  @playlist = @current_user.playlists
+  @track = Track.find(params[:id])
+  @playlists = @current_user.playlists
   erb :"tracks/playlist"
 end   
 
@@ -52,8 +58,15 @@ end
 put '/tracks/:id' do
   authorize!
   @track = Track.find(params[:id])
+
+  if(params[:playlist_id])
+    playlist = Playlist.find(params[:playlist_id])
+    params[:track] = {}
+  end
+
   if @track.update(params[:track])
-    redirect "/tracks/#{@track.id}"
+    @track.playlists << playlist if playlist
+    redirect "/tracks"
   else
     erb :"tracks/show"
   end
@@ -61,7 +74,10 @@ end
 
 delete "/tracks/:id" do
   authorize!
-  @track = Track.find(params[:id])
-  @track.destroy
-  redirect("/")
+  user = @current_user
+  track = Track.find(params[:id])
+  user.tracks.delete(track)
+  
+  
+  redirect("/tracks")
 end

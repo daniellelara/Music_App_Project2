@@ -1,4 +1,4 @@
-<form id="add_playlist" class="pure-form pure-form-stacked" method="post" action="/playlists">
+<form id="add_playlist" class="pure-form pure-form-stacked" method="post" action="/playlists" enctype="multipart/form-data">
   
     <fieldset>
         <legend>add track</legend>
@@ -10,7 +10,7 @@
         <input name="playlist[genre]" type="text" class="form-control" id="genre" placeholder="artst">
 
         <label for="image">image</label>
-        <input name="playlist[image]" type="text" class="form-control" id="image" >
+        <input name="playlist[image]" type="file" class="form-control" id="image" >
 
 
 

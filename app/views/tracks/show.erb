@@ -3,3 +3,7 @@
 </canvas>
 <audio src="/audio/<%= @track.file %>" id="audio" controls></audio>
 <p><%= @track.title %> / <%= @track.artist %> </p>
+<form method="post" action="/tracks/<%= @track.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn btn-default">
+</form>

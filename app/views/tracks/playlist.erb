@@ -1,0 +1,14 @@
+<h2>add to current playlist or create new</h2>
+
+<h3>add new</h3>
+
+<h3>add to current</h3>
+<ul>
+  <% @playlists.each do |playlist| %>
+  
+    <li>
+      <a href="/playlists/<%= playlist.id %>"><%= playlist.title %></a>
+    </li>  
+        
+  <% end %>
+  </ul>
