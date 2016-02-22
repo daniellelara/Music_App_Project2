@@ -1,5 +1,9 @@
-body { background-color: #8b8383; font-family: helvetica; }
+body { background-color: #8b8383; font-family: "HelveticaNeue-Light"; background: #1f1f2e; color: white; }
 
-.custom-restricted { height: 80px; background: white; color: #8b8383; border-radius: 4px; font-family: helvetica; }
+.centered { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+.custom-restricted { height: 40px; background: #555356; color: gray; font-family: "HelveticaNeue-Light"; }
+
+input { color: #333; }
 
 /*# sourceMappingURL=style.css.map */

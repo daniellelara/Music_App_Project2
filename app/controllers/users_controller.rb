@@ -27,7 +27,7 @@ end
 get "/users/:id" do
   authorize!
   @user = User.find(params[:id])
-  if @user
+  if @user.id == session[:user_id]
     erb :"users/show"
   else
     redirect "/users"
@@ -37,8 +37,12 @@ end
 # EDIT
 get "/users/:id/edit" do
   authorize!
-  @user = User.find(params[:id])
-  erb :"users/edit"
+  if @user.id == session[:user_id]
+    @user = User.find(params[:id])
+    erb :"users/edit"
+  else
+    redirect "/users"
+  end  
 end
 
 # UPDATE

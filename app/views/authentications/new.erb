@@ -1,4 +1,4 @@
-<h2>Register</h2>
+
 <% @user.errors.full_messages.each do |error| %>
   <div class="alert alert-danger alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -8,16 +8,16 @@
 <form id="register" class="pure-form pure-form-stacked" method="post" action="/register">
   
     <fieldset>
-        <legend>edit profile</legend>
+        <legend>sign up</legend>
 
         <label for="name">name</label>
         <input name="user[name]" type="text" class="form-control" id="username" placeholder="name">
 
-        <label for="username">Username</label>
+        <label for="username">username</label>
         <input name="user[username]" type="text" class="form-control" id="username" placeholder="Username">
 
-        <label for="image">Image</label>
-        <input name="user[image]" type="text" class="form-control" id="image" placeholder="Image">
+        <label for="image">image</label>
+        <input name="user[image]" type="file" class="form-control" id="image" >
 
         <label for="email">e-mail address</label>
         <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email">
@@ -25,10 +25,10 @@
         <label for="city">city</label>
         <input name="user[city]" type="text" class="form-control" id="city" placeholder="city">
 
-        <label for="password">Password</label>
+        <label for="password">password</label>
         <input name="user[password]" type="password" class="form-control" id="password" placeholder="Password">
 
 
-        <button type="submit" class="pure-button pure-button-primary">update</button>
+        <button type="submit" class="pure-button pure-button-primary">sign up</button>
     </fieldset>
 </form>

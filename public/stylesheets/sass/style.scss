@@ -1,12 +1,22 @@
 body {
   background-color: rgb(139, 131, 131);
-  font-family: helvetica;
+  font-family: "HelveticaNeue-Light";
+  background: #1f1f2e;
+  color: white; 
+  
+}
+
+.centered {
+  position: absolute;     left: 50%;     top: 50%;     transform: translate(-50%,-50%); 
 }
 
 .custom-restricted {
-    height: 80px;
-    background: white;
-    color: rgb(139, 131, 131);
-    border-radius: 4px;
-    font-family: helvetica;
+    height: 40px;
+    background: #555356;
+    color: gray; 
+    font-family: "HelveticaNeue-Light";
+}
+
+input {
+  color: #333;
 }

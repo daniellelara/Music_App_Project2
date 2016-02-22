@@ -1,0 +1,21 @@
+<form id="add_track" class="pure-form pure-form-stacked" method="post" action="/tracks">
+  
+    <fieldset>
+        <legend>add track</legend>
+
+        <label for="title">title</label>
+        <input name="track[title]" type="text" class="form-control" id="tracktitle" placeholder="title">
+
+        <label for="artist">artist</label>
+        <input name="track[artist]" type="text" class="form-control" id="artist" placeholder="artst">
+
+        <label for="file">file</label>
+        <input name="track[file]" type="text" class="form-control" id="file" >
+
+        <label for="genre">genre</label>
+        <input name="track[genre]" type="text" class="form-control" id="genre" placeholder="genre">
+
+
+        <button type="submit" class="pure-button pure-button-primary">add</button>
+    </fieldset>
+</form>

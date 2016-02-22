@@ -19,6 +19,11 @@ GEM
     bcrypt (3.1.10)
     bond (0.5.1)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     daemons (1.2.3)
     eventmachine (1.0.9.1)
@@ -26,6 +31,7 @@ GEM
     jsmin (1.0.1)
     json (1.8.3)
     method_source (0.8.2)
+    mime-types (2.99)
     minitest (5.8.4)
     multi_json (1.11.2)
     pg (0.18.4)
@@ -90,6 +96,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt
+  carrierwave
   pg
   pry
   rake
