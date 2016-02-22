@@ -1,4 +1,8 @@
 <h2><%= @playlist.title %></h2>
+<form method="post" action="/playlists/<%= @playlist.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn btn-default">
+</form>
 <ul>
   <% if @tracks == [] %>
   <li><p>Please add some <a href="/tracks">tracks</a></p></li> 

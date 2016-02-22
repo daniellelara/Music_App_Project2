@@ -1,15 +1,48 @@
 <h2><%= @user.username %></h2>
-<% if @user.image_identifier %>
-  <img class="media-object" src="/uploads/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150>
+<% if @current_user == @user %>
+  <% if @user.image_identifier %>
+    <img class="media-object" src="/uploads/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150>
+  <% else %>
+    <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
+  <% end %>
+  <p><%= @user.name %></p>
+  <p><%= @user.email %></p>
+  <p><%= @user.city %></p>
+  <form method="post" action="/users/<%= @user.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete" class="btn btn-default">
+  </form>
+  <p><a href="/tracks">my tracks</a></p>
+  <p><a href="/playlists">my playlists</a></p>
 <% else %>
-  <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
+  <ul class="media-list">
+    <% @tracks.each do |track| %>
+      <li class="media">
+      <canvas id="canvas" width="300" height="300">
+        An alternative text describing what your canvas displays. 
+      </canvas>
+      <audio src="/uploads/audio/<%= track.file_identifier %>" id="audio" controls></audio>
+      <p><%= track.title %> / <%= track.artist %> </p>
+      <a href="/tracks/<%= track.id %>">Full</a>
+
+      <form method="POST" action="/tracks/<%= track.id %>">
+        <input type="hidden" name="_method" value="PUT">
+        <select name="playlist_id">
+          <% current_user.playlists.each do |playlist| %>
+            <option value="<%= playlist.id %>"><%= playlist.title %></option>
+          <% end %>
+        </select>
+        <input type="submit" value="update">
+      </form>
+      <a href="/tracks/<%= track.id %>/playlist">add to playlist</a>
+      <% if track.image_identifier %>
+        <img class="media-object" src="/uploads/images/<%= track.image_identifier %>" width=50 height=50>
+      <% else %>
+        <img class="media-object" src="/uploads/HO6-anika.jpg" width=50 height=50>
+    <% end %>  
+               
+    </li>  
+        
+  <% end %>
+  </ul>  
 <% end %>
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
-<p><%= @user.city %></p>
-<form method="post" action="/users/<%= @user.id %>">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete" class="btn btn-default">
-</form>
-<p><a href="/tracks">my tracks</a></p>
-<p><a href="/playlists">my playlists</a></p>

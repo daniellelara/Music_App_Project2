@@ -74,5 +74,18 @@ put '/playlists/:id' do
 end
 
 delete "/playlists/:id" do
-  #delete relationship
+  #delete playlist from user relationship
+  authorize!
+  user = @current_user
+  playlist = Playlist.find(params[:id])
+  user.playlists.delete(playlist)
+  redirect("/tracks")
 end
+
+delete"/playlists/:id/tracks" do
+  authorize!
+  playlist = Playlist.find(params[:id])
+  track = Track.find(params[:id])
+  playlist.tracks.delete(track)
+  redirect("/tracks/:id")
+end 

@@ -26,17 +26,20 @@ end
 # SHOW
 get "/users/:id" do
   authorize!
+
   @user = User.find(params[:id])
-  if @user.id == session[:user_id]
+
+  @tracks = @user.tracks 
+  
     erb :"users/show"
-  else
-    redirect "/users"
-  end
+  
+  
 end
 
 # EDIT
 get "/users/:id/edit" do
   authorize!
+  @user = User.find(params[:id])
   if @user.id == session[:user_id]
     @user = User.find(params[:id])
     erb :"users/edit"
@@ -55,6 +58,8 @@ put '/users/:id' do
     erb :"users/show"
   end
 end
+
+#delete
 
 delete "/users/:id" do
   authorize!
