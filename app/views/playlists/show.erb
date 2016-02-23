@@ -1,39 +1,39 @@
 <h2><%= @playlist.title %></h2>
+
 <form method="post" action="/playlists/<%= @playlist.id %>">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete" class="btn btn-default">
 </form>
-  <% if @tracks == [] %>
 
+<% if @tracks == [] %>
   <p>Please add some <a href="/tracks">tracks</a></p> 
-    
-    
-   <% else %>
-   <div class="pure-g">
+<% else %>
+  <div class="pure-g">
 
-   <canvas id="canvas" width="600" height="200" class="playlist_canvas">
+    <canvas id="canvas" width="600" height="200" class="playlist_canvas">
      An alternative text describing what your canvas displays. 
-   </canvas>
-   
-   
-   <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
-   <div class ="message"></div>
-   <a id="play-bt" href="#">Play music</a>
-   <a id="pause-bt" href="#">Pause music</a>
-   <a id="stop-bt" href="#">Stop music</a>
-   <a id="next-bt" href="#">Next track</a>
-   <a id="play-all" href="#">play all</a>
-   </div>
+    </canvas>
 
-     <% @tracks.each do |track| %>
-     <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
-       
-      <audio src="<%= track.file %>" id="audio"></audio><%= track.title %>
-       
-       
-      </div>
-     <% end %>
-    
-    </div> 
+    <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
+      <div class ="message"></div>
+      <a id="play-bt" href="#">Play music</a>
+      <a id="pause-bt" href="#">Pause music</a>
+      <a id="stop-bt" href="#">Stop music</a>
+      <a id="next-bt" href="#">Next track</a>
+      <a id="play-all" href="#">play all</a>
+    </div>
 
-  <% end %>
+
+    <% @tracks.each do |track| %>
+    <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
+      <audio src="<%= track.file %>"></audio>
+
+      <%= track.title %>
+      <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
+        <input type="hidden" name="_method" value="DELETE"> 
+        <input type="submit" value="Delete" class="btn btn-default">
+      </form>
+    </div>
+    <% end %>
+  </div> 
+<% end %>
