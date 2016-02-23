@@ -1,11 +1,38 @@
-body { background-color: #8b8383; font-family: "HelveticaNeue-Light"; background: #1f1f2e; color: white; }
+.pure-menu-heading { color: #E6EAEE; }
+
+.pure-menu-link { color: #E6EAEE; }
+
+.custom-wrapper { background-color: #7E7D7B; margin-bottom: 1em; -webkit-font-smoothing: antialiased; height: 2.1em; overflow: hidden; -webkit-transition: height 0.5s; -moz-transition: height 0.5s; -ms-transition: height 0.5s; transition: height 0.5s; }
+
+.custom-wrapper.open { height: 14em; }
+
+.custom-menu-3 { text-align: right; }
+
+.custom-toggle { width: 34px; height: 34px; display: inline-block; position: absolute; top: 0; right: 0; }
+
+.custom-toggle .bar { background-color: #E6EAEE; color: #E6EAEE; display: block; width: 20px; height: 2px; border-radius: 100px; position: absolute; top: 18px; right: 7px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; transition: all 0.5s; }
+
+.custom-toggle .bar:first-child { -webkit-transform: translateY(-6px); -moz-transform: translateY(-6px); -ms-transform: translateY(-6px); transform: translateY(-6px); }
+
+.custom-toggle.x .bar { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+.custom-toggle.x .bar:first-child { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+@media (max-width: 47.999em) { .custom-menu-3 { text-align: left; }
+  .custom-toggle { display: block; } }
+.users { width: 100%; height: 70px; background-color: grey; margin: 20px; font-family: "HelveticaNeue-Light"; }
+
+.tracks { width: 100%; height: 100px; background-color: grey; margin: 20px; font-family: "HelveticaNeue-Light"; }
+
+body { background-color: #8b8383; font-family: "HelveticaNeue-Light"; background: #27272A; color: #E6EAEE; }
 
 .centered { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
-.custom-restricted { height: 40px; background: #555356; color: gray; font-family: "HelveticaNeue-Light"; }
-
 input { color: #333; }
 
-.search { float: right; }
+a { text-decoration: none; color: white; }
+a:hover { text-decoration: underline; }
+
+img { margin-right: 20px; }
 
 /*# sourceMappingURL=style.css.map */

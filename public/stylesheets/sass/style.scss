@@ -1,8 +1,11 @@
+@import 'nav';
+@import 'index';
+
 body {
   background-color: rgb(139, 131, 131);
   font-family: "HelveticaNeue-Light";
-  background: #1f1f2e;
-  color: white; 
+  background: #27272A;
+  color: #E6EAEE; 
   
 }
 
@@ -10,17 +13,18 @@ body {
   position: absolute;     left: 50%;     top: 50%;     transform: translate(-50%,-50%); 
 }
 
-.custom-restricted {
-    height: 40px;
-    background: #555356;
-    color: gray; 
-    font-family: "HelveticaNeue-Light";
-}
 
 input {
   color: #333;
 }
 
-.search {
-  float: right;
+
+a {
+  text-decoration: none;
+  color: white;
+  &:hover {text-decoration: underline;}
+}
+
+img {
+  margin-right: 20px;
 }

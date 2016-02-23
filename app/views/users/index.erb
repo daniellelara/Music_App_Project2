@@ -1,22 +1,15 @@
-<h2>All Users</h2>
-<ul class="media-list">
+
+<div class="pure-g">
+    
   <% @users.each do |user| %>
-    <li class="media">
-      <div class="media-left">
-        <a href="/users/<%= user.id %>">
-          <% if user.image_identifier %>
-            <img class="media-object" src="/uploads/<%= user.image_identifier %>" alt="<%= user.username %>'s image" width=100 height=100 >
+    <div class="pure-u-1 pure-u-md-1-3 users">
+        <% if user.image_identifier %>
+            <img class="media-object" src="/uploads/images/<%= user.image_identifier %>" width=70 height=70 >
           <% else %>
-            <img class="media-object" src="/images/default.png" alt="<%= user.username %>'s image">
-          <% end %>
-        </a>
-      </div>
-      <div class="media-body">
-        <a href="/users/<%= user.id %>">
-          <h4 class="media-heading"><%= user.username %></h4>
-        </a>
-        <%= user.email %>
-      </div>
-    </li>
+            <img class="media-object" src="/uploads/images/colorful-triangles-background_yB0qTG6.jpg">
+        <% end %>
+        <a href="/users/<%= user.id %>"><%= user.username %></a>  
+    </div>
+    
   <% end %>
-</ul>
+</div>  

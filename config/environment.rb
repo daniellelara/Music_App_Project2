@@ -15,8 +15,8 @@ register Sinatra::AssetPack
 assets do
   js :application, [
     '/bower_components/jquery/dist/jquery.min.js',
-    '/js/app.js'
-  ]
+    '/js/pure.js',
+    '/js/app.js'  ]
   css :application, [
     '/bower_components/pure/pure-min.css',
     '/stylesheets/style.css'
