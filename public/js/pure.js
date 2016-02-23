@@ -2,6 +2,7 @@
 
 setTimeout(purejs, 300);
 
+
 function purejs() {
     var menu = document.getElementById('menu'),
         WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';

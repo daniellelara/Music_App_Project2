@@ -3,22 +3,37 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete" class="btn btn-default">
 </form>
-<ul>
   <% if @tracks == [] %>
-  <li><p>Please add some <a href="/tracks">tracks</a></p></li> 
+
+  <p>Please add some <a href="/tracks">tracks</a></p> 
     
     
    <% else %>
+   <div class="pure-g">
+
+   <canvas id="canvas" width="600" height="200" class="playlist_canvas">
+     An alternative text describing what your canvas displays. 
+   </canvas>
    
+   
+   <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
+   <div class ="message"></div>
+   <a id="play-bt" href="#">Play music</a>
+   <a id="pause-bt" href="#">Pause music</a>
+   <a id="stop-bt" href="#">Stop music</a>
+   <a id="next-bt" href="#">Next track</a>
+   <a id="play-all" href="#">play all</a>
+   </div>
+
      <% @tracks.each do |track| %>
-     <li class="media">
-       <canvas id="canvas" width="300" height="300">
-         An alternative text describing what your canvas displays. 
-       </canvas>
-       <audio src="/audio/<%= track.file %>" id="audio" controls></audio>
-       <p><%= track.title %> / <%= track.artist %> </p>
-       <a href="/tracks/<%= track.id %>">Full</a>
-     </li> 
-     <% end %>   
+     <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
+       
+      <audio src="<%= track.file %>" id="audio"></audio><%= track.title %>
+       
+       
+      </div>
+     <% end %>
+    
+    </div> 
+
   <% end %>
-</ul>

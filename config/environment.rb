@@ -16,7 +16,8 @@ assets do
   js :application, [
     '/bower_components/jquery/dist/jquery.min.js',
     '/js/pure.js',
-    '/js/app.js'  ]
+    '/js/app.js',
+    '/js/playlist.js'  ]
   css :application, [
     '/bower_components/pure/pure-min.css',
     '/stylesheets/style.css'
