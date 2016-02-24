@@ -26,11 +26,11 @@
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list">
               <% if is_logged_in? %>
-                <li class="pure-menu-item"><a href="/users" class="pure-menu-link">discover</a></li>
-                <li class="pure-menu-item"><a href="/users/<%= current_user.id %>" class="pure-menu-link">profile</a></li>                      
-                <li class="pure-menu-item"><a href="/users/<%= current_user.id %>/edit" class="pure-menu-link">edit profile</a></li>
-                <li class="pure-menu-item"><a href="/tracks/new" class="pure-menu-link">upload</a></li>
                 <li class="pure-menu-item"><a href="/playlists" class="pure-menu-link">playlists</a></li>
+                <li class="pure-menu-item"><a href="/users/<%= current_user.id %>" class="pure-menu-link">profile</a></li>                      
+                <li class="pure-menu-item"><a href="/tracks" class="pure-menu-link">tracks</a></li>
+                <li class="pure-menu-item"><a href="/tracks/new" class="pure-menu-link">upload</a></li>                
+                <li class="pure-menu-item"><a href="/users" class="pure-menu-link">discover</a></li>
                 <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">logout</a></li>
               <% else %>
                 <li class="pure-menu-item"><a href="/register" class="pure-menu-link">sign up</a></li>

@@ -1,15 +1,23 @@
 $(function() {
  
- var source = [];
- $('.playlist_tracks').find('audio').each(function() {
-      source.push($(this).attr('src'));
-  });
+ 
+    var playlist = $('.playlist_tracks').find('audio').toArray();
+    var $canvases = $('canvas');
 
-var playlist = [];
-for (var i=0; i< source.length; i++) {
-  var sound = new Audio(source[i]);
-  playlist.push(sound);
- };
+    playlist.forEach(function(elem, idx) {
+      makinWaves(elem, $canvases[idx]);
+    });
+
+//  var source = [];
+//  $('.playlist_tracks').find('audio').each(function() {
+//       source.push($(this).attr('src'));
+//   });
+
+// var playlist = [];
+// for (var i=0; i< source.length; i++) {
+//   var sound = new Audio(source[i]);
+//   playlist.push(sound);
+//  };
  
 
  var x = playlist.length; // Count total audio players
@@ -17,6 +25,7 @@ for (var i=0; i< source.length; i++) {
 
      $("#play-bt").click(function(){
       console.log(playlist);
+            
             playlist[z].play();
          $(".message").text("Music started");
      })

@@ -20,13 +20,17 @@
 
 @media (max-width: 47.999em) { .custom-menu-3 { text-align: left; }
   .custom-toggle { display: block; } }
-.users { width: 100%; height: 70px; background-color: grey; margin: 10px 60px 10px 60px; font-family: "HelveticaNeue-Light"; }
+.users { width: 100%; height: 70px; background-color: grey; margin: 10px 80px 10px 80px; font-family: "HelveticaNeue-Light"; }
 
-.tracks { width: 100%; height: 100px; background-color: grey; margin: 20px; font-family: "HelveticaNeue-Light"; }
+.tracks { width: 100%; background-color: grey; margin: 20px 80px; font-family: "HelveticaNeue-Light"; }
 
 .playlist_tracks { width: 100%; height: 30px; background-color: grey; margin: 5px 200px; font-family: "HelveticaNeue-Light"; }
 
-.playlist_canvas { position: relative; margin-left: 100px; }
+.controller { background-color: lightblue; height: 50px; }
+
+.playlist_canvas, .track-canvas { position: relative; width: 100%; height: 90px; z-index: 1; position: relative; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); }
+
+.overlay { z-index: 2; position: relative; margin-top: -90px; }
 
 body { background-color: #8b8383; font-family: "HelveticaNeue-Light"; background: #27272A; color: #E6EAEE; }
 

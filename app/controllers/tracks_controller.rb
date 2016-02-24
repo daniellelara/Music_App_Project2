@@ -39,13 +39,21 @@ get "/tracks/:id" do
     erb :"tracks/show"
   
 end
-#add track to playlist
-get "/tracks/:id/playlist" do
+
+#add track from other user
+post "/tracks/:id/add" do
   authorize!
   @track = Track.find(params[:id])
-  @playlists = @current_user.playlists
-  erb :"tracks/playlist"
-end   
+  @track.users << @current_user
+  redirect "/tracks"
+end  
+#add track to playlist
+# get "/tracks/:id/playlist" do
+#   authorize!
+#   @track = Track.find(params[:id])
+#   @playlists = @current_user.playlists
+#   erb :"tracks/playlist"
+# end   
 
 # EDIT
 get "/tracks/:id/edit" do

@@ -1,0 +1,19 @@
+<form id="add_playlist" class="pure-form pure-form-stacked" method="post" action="/playlists/<%= @playlist.id %>" enctype="multipart/form-data">
+  
+    <fieldset>
+        <legend>add track</legend>
+
+        <label for="title">title</label>
+        <input name="playlist[title]" type="text" class="form-control" id="playlisttitle" value="<%= @playlist.title %>">
+
+        <label for="genre">genre</label>
+        <input name="playlist[genre]" type="text" class="form-control" id="genre" placeholder="artst" value="<%= @playlist.genre %>">
+
+        <label for="image">image</label>
+        <input name="playlist[image]" type="file" class="form-control" value="<%= @playlist.image %>" id="image" >
+
+
+
+        <button type="submit" class="pure-button pure-button-primary">update playlist</button>
+    </fieldset>
+</form>

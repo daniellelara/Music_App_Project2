@@ -9,9 +9,9 @@ get "/results" do
     @tracks =Track.where("title ILIKE :search OR genre ILIKE :search OR  artist ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc)
     @playlists =Playlist.where("title ILIKE :search OR genre ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc)
   else  
-  @users = User.all
-  @playlists = Playlist.all
-  @tracks = Track.all
-end
+    @users = User.all
+    @playlists = Playlist.all
+    @tracks = Track.all
+  end
   erb :'static/results'
 end

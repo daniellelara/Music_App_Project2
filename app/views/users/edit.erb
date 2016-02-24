@@ -1,5 +1,5 @@
 
-<form id="register" class="pure-form pure-form-stacked" method="post" action="/users/<%= @user.id %>">
+<form id="register" class="pure-form pure-form-stacked" enctype="multipart/form-data" method="post" action="/users/<%= @user.id %>">
   <input type="hidden" name="_method" value="put">
     <fieldset>
         <legend>edit profile</legend>
@@ -11,7 +11,7 @@
         <input name="user[username]" type="text" class="form-control" id="username" placeholder="Username" value="<%= @user.username %>">
 
         <label for="image">Image</label>
-        <input name="user[image]" type="text" class="form-control" id="image" placeholder="Image" value="<%= @user.image %>">
+        <input name="user[image]" type="file" class="form-control" id="image" placeholder="Image" value="<%= @user.image %>">
 
         <label for="email">e-mail address</label>
         <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email" value="<%= @user.email %>">
@@ -23,3 +23,4 @@
         <button type="submit" class="pure-button pure-button-primary">update</button>
     </fieldset>
 </form>
+

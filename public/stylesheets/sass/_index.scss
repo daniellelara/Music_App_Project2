@@ -2,16 +2,16 @@
   width: 100%;
   height: 70px;
   background-color: grey;
-  margin: 10px 60px 10px 60px;
+  margin: 10px 80px 10px 80px;
   font-family: "HelveticaNeue-Light";
 }
 
 .tracks {
   width: 100%;
-  height: 100px;
   background-color: grey;
-  margin: 20px;
+  margin: 20px 80px;
   font-family: "HelveticaNeue-Light";
+
 }
 
 .playlist_tracks {
@@ -21,4 +21,9 @@
   margin: 5px 200px;
   font-family: "HelveticaNeue-Light";
 
+}
+
+.controller {
+  background-color: lightblue;
+  height: 50px;
 }

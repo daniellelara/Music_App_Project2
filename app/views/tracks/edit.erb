@@ -1,4 +1,4 @@
-<form id="add_track" class="pure-form pure-form-stacked" method="post" action="/tracks/<%= @track.id %>">
+<form id="add_track" class="pure-form pure-form-stacked" enctype="multipart/form-data" method="post" action="/tracks/<%= @track.id %>">
 <input type="hidden" name="_method" value="put">
   
     <fieldset>
@@ -11,10 +11,10 @@
         <input name="track[artist]" type="text" class="form-control" id="artist" value="<%= @track.artist %>">
 
         <label for="file">file</label>
-        <input name="track[file]" type="text" class="form-control" id="file" value="<%= @track.file %>" >
+        <input name="track[file]" type="file" class="form-control" id="file" value="<%= @track.file %>" >
 
         <label for="genre">genre</label>
-        <input name="track[genre]" type="text" class="form-control" id="genre"  value="<%= @track.file %>">
+        <input name="track[genre]" type="text" class="form-control" id="genre"  value="<%= @track.genre %>">
 
 
         <button type="submit" class="pure-button pure-button-primary">update</button>

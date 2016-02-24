@@ -30,6 +30,8 @@ get "/users/:id" do
   @user = User.find(params[:id])
 
   @tracks = @user.tracks 
+
+  @playlists = @user.playlists
   
     erb :"users/show"
   
