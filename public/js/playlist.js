@@ -1,6 +1,6 @@
 $(function() {
  
- 
+
     var playlist = $('.playlist_tracks').find('audio').toArray();
     var $canvases = $('canvas');
 
@@ -25,29 +25,43 @@ $(function() {
 
      $("#play-bt").click(function(){
       console.log(playlist);
-            
+            $canvases[z].style.zIndex = "0";
             playlist[z].play();
          $(".message").text("Music started");
      })
      $("#pause-bt").click(function(){
+        $canvases[z].style.zIndex = "-1";
          playlist[z].pause();
          $(".message").text("Music paused");
      })
      $("#stop-bt").click(function(){
+
+        $canvases[z].style.zIndex = "-1";
          playlist[z].pause();
          playlist[z].currentTime = 0;
          $(".message").text("Music Stopped");
      })
      $("#next-bt").click(function(){
+
+        $canvases[z].style.zIndex = "-1";
          playlist[z].pause();
          z++;
          if (z >= x) z = 0;
+         $canvases[z].style.zIndex = "0";
+         playlist[z].play();
+         $(".message").text("Track: "+z);
+     }) 
+     $("#previous-bt").click(function(){
+         playlist[z].pause();
+         z--;
+         if (z > 0) z = 0;
          playlist[z].play();
          $(".message").text("Track: "+z);
      }) 
 
      $("#play-all").click(function(){
      var i = 0
+     $canvases[i].style.zIndex = "0";
      playlist[i].play();
      $(".message").text("Track: "+i);
      for (i = 0; i < playlist.length - 1; ++i) {

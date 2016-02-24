@@ -23,9 +23,9 @@ function makinWaves(audio, canvas) {
     canvasCtx.fillStyle = '#8B8383';
     canvasCtx.fillRect(0, 0, canvasWidth, canvasHeight);
     canvasCtx.lineWidth = 5;
-    canvasCtx.strokeStyle = '#FF402B';
+    canvasCtx.strokeStyle = 'lightblue';
     canvasCtx.shadowBlur = 15
-    canvasCtx.shadowColor = 'magenta';
+    canvasCtx.shadowColor = '#E6EAEE';
     canvasCtx.shadowOffsetX = 0;
     canvasCtx.shadowOffsetY = 0;
 

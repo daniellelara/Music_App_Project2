@@ -41,8 +41,7 @@
           <div class ="message-track"></div>
           <a class="play-bt-track" href="#">play</a>
           <a class="pause-bt-track" href="#">pause</a>
-          <a class="stop-bt-track" href="#">stop music</a>
-          <%= track.title %> / <%= track.artist %><a href="/tracks/<%= track.id %>">Full</a>
+          <%= track.title %> / <%= track.artist %>
           <form method="POST" action="/tracks/<%= track.id %>">
             <input type="hidden" name="_method" value="PUT">
             <select name="playlist_id">

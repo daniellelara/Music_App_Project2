@@ -1,4 +1,11 @@
+<p>my tracks</p>
 <div class="pure-g">
+<% if @tracks == [] %>
+  <div class="pure-u-1 pure-u-md-1-3">
+  You have not uploaded any track, browse other alize users <a href="/users">here</a>
+  </div>
+  <% else %>
+
   <% @tracks.each do |track| %>
   <div class="pure-u-1 pure-u-md-1-3 tracks">
     <canvas class="track-canvas">
@@ -15,7 +22,6 @@
     <div class ="message-track"></div>
     <a class="play-bt-track" href="#">play</a>
     <a class="pause-bt-track" href="#">pause</a>
-    <a class="stop-bt-track" href="#">stop music</a>
     <%= track.title %> / <%= track.artist %><a href="/tracks/<%= track.id %>">Full</a>
     <form method="POST" action="/tracks/<%= track.id %>">
       <input type="hidden" name="_method" value="PUT">
@@ -29,5 +35,6 @@
     
     <a href="/uploads/audio/<%= track.file %>" download>download</a>
   </div>
+  <% end %>
   <% end %>
 </div>

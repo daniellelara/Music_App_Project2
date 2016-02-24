@@ -1,0 +1,14 @@
+<div class="pure-g">
+    
+  <% @tracks.each do |track| %>
+    <div class="pure-u-1 pure-u-md-1-3 users">
+        <% if track.image_identifier %>
+            <img class="media-object" src="/uploads/images/<%= track.image_identifier %>" width="70" height="70" >
+          <% else %>
+            <img class="media-object" src="/uploads/images/colorful-triangles-background_yB0qTG6.jpg" width="70" height="70">
+        <% end %>
+        <a href="/tracks/<%= track.id %>"><%= track.title %></a>  
+    </div>
+    
+  <% end %>
+</div>  
