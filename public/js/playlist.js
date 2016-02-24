@@ -1,12 +1,13 @@
 $(function() {
- 
 
-    var playlist = $('.playlist_tracks').find('audio').toArray();
-    var $canvases = $('canvas');
 
-    playlist.forEach(function(elem, idx) {
-      makinWaves(elem, $canvases[idx]);
-    });
+  var $audio = $('audio');
+  var $canvas = $('canvas');
+  var filenames = $('.filename').toArray().map(function(elem) {
+    return elem.value;
+  });
+
+  makinWaves($audio[0], $canvas[0]);
 
 //  var source = [];
 //  $('.playlist_tracks').find('audio').each(function() {
@@ -18,59 +19,51 @@ $(function() {
 //   var sound = new Audio(source[i]);
 //   playlist.push(sound);
 //  };
- 
 
- var x = playlist.length; // Count total audio players
- var z = 0; // Start at first audio player
+
+     var playlistLength = filenames.length; // Count total audio players
+     var currentIdx = 0; // Start at first audio player
+
+     $audio[0].src = filenames[currentIdx];
 
      $("#play-bt").click(function(){
-      console.log(playlist);
-            $canvases[z].style.zIndex = "0";
-            playlist[z].play();
-         $(".message").text("Music started");
-     })
+      $audio[0].play();
+      $(".message").text("Music started");
+    })
      $("#pause-bt").click(function(){
-        $canvases[z].style.zIndex = "-1";
-         playlist[z].pause();
-         $(".message").text("Music paused");
-     })
+      $audio[0].pause();
+      $(".message").text("Music paused");
+    })
      $("#stop-bt").click(function(){
-
-        $canvases[z].style.zIndex = "-1";
-         playlist[z].pause();
-         playlist[z].currentTime = 0;
-         $(".message").text("Music Stopped");
+       $audio[0].pause();
+       $audio[0].currentTime = 0;
+       $(".message").text("Music Stopped");
      })
      $("#next-bt").click(function(){
 
-        $canvases[z].style.zIndex = "-1";
-         playlist[z].pause();
-         z++;
-         if (z >= x) z = 0;
-         $canvases[z].style.zIndex = "0";
-         playlist[z].play();
-         $(".message").text("Track: "+z);
-     }) 
+      currentIdx++;
+      $audio[0].pause();
+      $audio[0].src = filenames[currentIdx];
+      $audio[0].play();
+      $(".message").text("Track: "+z);
+    }) 
      $("#previous-bt").click(function(){
-         playlist[z].pause();
-         z--;
-         if (z > 0) z = 0;
-         playlist[z].play();
-         $(".message").text("Track: "+z);
-     }) 
+      currentIdx--;
+      $audio[0].pause();
+      $audio[0].src = filenames[currentIdx];
+      $audio[0].play();
+      $(".message").text("Track: "+z);
+    }) 
 
      $("#play-all").click(function(){
-     var i = 0
-     $canvases[i].style.zIndex = "0";
-     playlist[i].play();
-     $(".message").text("Track: "+i);
-     for (i = 0; i < playlist.length - 1; ++i) {
-         playlist[i].addEventListener('ended', function(e){
-             var currentSong = e.target;
-             var next = $(currentSong).nextAll('audio');
-             if (next.length) $(next[0]).trigger('play');
-             $(".message").text("Track: "+i);
-         });
-     }
-   });
-  });        
+       $audio[0].play();
+       $(".message").text("Track: "+i);
+       $audio[0].addEventListener('ended', function(e){
+        currentIdx++;
+        $audio[0].pause();
+        $audio[0].src = filenames[currentIdx];
+        $audio[0].play();
+        $(".message").text("Track: "+i);
+      });
+     });
+   });        

@@ -17,8 +17,8 @@ get "/results" do
 end
 
 get "/tracksall" do
-  @tracks = Track.all
+  @tracks = Track.all.order(title: :desc)
 
-  erb :'static/results'
+  erb :'static/alltrack'
 end  
 
