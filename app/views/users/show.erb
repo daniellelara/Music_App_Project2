@@ -17,16 +17,19 @@
     <input type="submit" value="Delete" class="btn btn-default">
   </form>
 <% else %>
-  <div class="pure-u-1 user-page">
+  <div class="pure-u-1 profile user-page">
   <% if @user.image_identifier %>
-    <img class="media-object" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
+    <img class="profile-pic" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
   <% else %>
-    <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
+    <img class="profile-pic" src="/images/default.png" alt="<%= @user.username %>'s image">
   <% end %>
-  <%= @user.name %> / <%= @user.city %>
+  <p>name: <%= @user.name %></p> 
+  <p>username: <%= @user.username %></p> 
+  <p>location: <%= @user.city %></p>
+  <p>tracks: <%= @tracks.length %></p>
   </div>
   <div class="pure-u-1 user-page">
-<p>Tracks</p>
+<img src="/images/tracks.png">
   </div>
 
   </div>
@@ -73,7 +76,9 @@
     <% end %>
 
 
-
+      <div class="pure-u-1 user-page">
+    <img src="/images/playlists.png">
+      </div>
     <% @playlists.each do |playlist| %>
       <div class="pure-u-1 pure-u-md-1-3">
         <a href="/playlists/<%= playlist.id %>"><%= playlist.title %></a>

@@ -58,6 +58,10 @@ a.inline { font-size: 12px; display: block; text-align: center; }
 
 .user-page { margin-left: 20px; }
 
+.profile { text-align: right; font-size: 20px; }
+
+.profile-pic { margin: 20px; float: right; border: 1px solid grey; }
+
 .playlist-canvas { position: relative; width: 100%; height: 90px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
 
 .playlist_tracks { height: 50px; background: red; font-family: "HelveticaNeue-Light"; }
