@@ -1,5 +1,7 @@
 function makinWaves(audio, canvas) {
 
+  console.log(audio, canvas);
+
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
   var context = new AudioContext();
   var analyser = context.createAnalyser();
@@ -15,21 +17,21 @@ function makinWaves(audio, canvas) {
   var canvasCtx = canvas.getContext("2d");
   var canvasHeight = canvas.height;
   var canvasWidth = canvas.width;
+
   canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight);
   
   function draw() {
     drawVisual = requestAnimationFrame(draw);
     analyser.getByteTimeDomainData(dataArray);
-    canvasCtx.fillStyle = '#8B8383';
+    canvasCtx.fillStyle = '#acaaad';
     canvasCtx.fillRect(0, 0, canvasWidth, canvasHeight);
     canvasCtx.lineWidth = 5;
-    canvasCtx.strokeStyle = 'lightblue';
+    canvasCtx.strokeStyle = '#E6EAEE';
     canvasCtx.shadowBlur = 15
-    canvasCtx.shadowColor = '#E6EAEE';
+    canvasCtx.shadowColor = '#4d4951';
     canvasCtx.shadowOffsetX = 0;
     canvasCtx.shadowOffsetY = 0;
-
-
+    
     canvasCtx.beginPath();
 
 

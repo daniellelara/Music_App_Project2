@@ -1,6 +1,9 @@
 $(function() {
 
-
+  if(!window.location.pathname.match(/playlists/)){
+    return;
+  }
+  
   var $audio = $('audio');
   var $canvas = $('canvas');
   var filenames = $('.filename').toArray().map(function(elem) {

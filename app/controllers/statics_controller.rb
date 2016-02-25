@@ -20,5 +20,11 @@ get "/tracksall" do
   @tracks = Track.all.order(title: :desc)
 
   erb :'static/alltrack'
+end 
+
+get "/playlistall" do
+  @tracks = Track.all.order(title: :desc)
+
+  erb :'static/alltrack'
 end  
 

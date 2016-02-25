@@ -1,0 +1,36 @@
+.track-margin {
+  margin-top: -20px;
+}
+
+.inline {
+  display: inline-block;
+  font-family: HelveticaNeue-Light;
+  font-size: 12px;
+  
+}
+
+img.track-pic {
+  margin-top: 0px;
+  margin-left: 0px;
+  
+  height: 50px;
+  width: 100px;
+  opacity: 0.75;
+  
+}
+
+.tracks {
+  border-radius: 1px;
+  //border: 1px solid white;
+  width: 60%;
+  height: 120px;
+  background-color: #acaaad;
+  margin: 10px 80px;
+  font-family: "HelveticaNeue-Light";
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.control {
+  float: right;
+}

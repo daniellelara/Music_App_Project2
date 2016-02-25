@@ -7,11 +7,15 @@
 }
 
 .tracks {
-  width: 100%;
-  background-color: grey;
-  margin: 20px 80px;
+  border-radius: 1px;
+  border: 1px solid lightblue;
+  width: 80%;
+  height: 120px;
+  background-color: #d1ccd3;
+  margin: 10px 80px;
   font-family: "HelveticaNeue-Light";
-
+  opacity: 0.75;
+  z-index: 1;
 }
 
 .playlist_tracks {
@@ -30,4 +34,10 @@
 
 .playlist {
   margin-top: 100px;
+
+}
+
+
+.button-xsmall {
+  font-size: 60%;
 }
