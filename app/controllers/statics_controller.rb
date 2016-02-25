@@ -17,7 +17,15 @@ get "/results" do
 end
 
 get "/tracksall" do
-  @tracks = Track.all.order(title: :desc)
+  page = params[:p].to_i || 1
+  offset = (page +1) * 5
+  number_of_tracks = Track.all.count
+
+  @number_of_pages = number_of_tracks / 5
+  
+  @number_of_pages += 1 if number_of_tracks % 5 != 0
+
+  @tracks = Track.all.limit(5).offset(offset)
 
   erb :'static/alltrack'
 end 

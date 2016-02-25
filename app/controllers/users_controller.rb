@@ -29,7 +29,7 @@ get "/users/:id" do
 
   @user = User.find(params[:id])
 
-  @tracks = @user.tracks 
+  @tracks = @user.tracks
 
   @playlists = @user.playlists
   

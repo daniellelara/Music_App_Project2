@@ -18,16 +18,17 @@
        An alternative text describing what your canvas displays. 
       </canvas>
       <audio></audio>
-
-    <div class="pure-u-1 pure-u-md-1-3 controller">
       <div class ="message"></div>
+    <div class="pure-u-1 pure-u-md-1-3 controller">
+      
       <i class="previous-bt fa fa-arrow-circle-o-left"></i>
       <i class="play-bt fa fa-play-circle-o"></i>
       <i class="pause-bt fa fa-pause-circle-o"></i>
       <i class="stop-bt fa fa-stop-circle-o"></i>
       <i class="next-bt fa fa-arrow-circle-o-right"></i>
+      <a id="play-all" href="#">all</a>
       <br>
-      <a id="play-all" href="#">play all</a>
+      
     </div>
 
     <% @tracks.each do |track| %>

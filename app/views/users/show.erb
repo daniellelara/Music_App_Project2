@@ -2,20 +2,23 @@
 
 <% if @current_user == @user %>
 
-  <p><%= @user.username %></p>
-  <p><a href="/tracks">my tracks </a>|<a href="/playlists">my playlists</a>|<a href="/users/<%= @user.id %>/edit"> edit profile</a></p>
-  <% if @user.image_identifier %>
-    <img class="media-object" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
-  <% else %>
-    <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
-  <% end %>
-  <p><%= @user.name %></p>
-  <p><%= @user.email %></p>
-  <p><%= @user.city %></p>
+  <div class="pure-u-1 profile user-own-page">
+    <% if @user.image_identifier %>
+      <img class="profile-pic" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
+    <% else %>
+      <img class="profile-pic" src="/images/default.png" alt="<%= @user.username %>'s image">
+    <% end %>
+    <p>name: <%= @user.name %></p> 
+    <p>username: <%= @user.username %></p> 
+    <p>location: <%= @user.city %></p>
+    <p>tracks: <%= @tracks.length %></p>
+    <p>tracks: <%= @playlists.length %></p>
+    
   <form method="post" action="/users/<%= @user.id %>">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete" class="btn btn-default">
+    <input type="submit" class="pure-button button-small" value="Delete" class="btn btn-default">
   </form>
+  </div>
 <% else %>
   <div class="pure-u-1 profile user-page">
   <% if @user.image_identifier %>
@@ -27,6 +30,7 @@
   <p>username: <%= @user.username %></p> 
   <p>location: <%= @user.city %></p>
   <p>tracks: <%= @tracks.length %></p>
+  <p>tracks: <%= @playlists.length %></p>
   </div>
   <div class="pure-u-1 user-page">
 <img src="/images/tracks.png">

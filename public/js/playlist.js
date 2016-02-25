@@ -29,20 +29,20 @@ $(function() {
 
      $audio[0].src = filenames[currentIdx];
 
-     $("#play-bt").click(function(){
+     $(".play-bt").click(function(){
       $audio[0].play();
       $(".message").text("Music started");
     })
-     $("#pause-bt").click(function(){
+     $(".pause-bt").click(function(){
       $audio[0].pause();
       $(".message").text("Music paused");
     })
-     $("#stop-bt").click(function(){
+     $(".stop-bt").click(function(){
        $audio[0].pause();
        $audio[0].currentTime = 0;
        $(".message").text("Music Stopped");
      })
-     $("#next-bt").click(function(){
+     $(".next-bt").click(function(){
 
       currentIdx++;
       $audio[0].pause();

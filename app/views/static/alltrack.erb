@@ -41,4 +41,11 @@
           
          </div>
       <% end %>
+     <% (1..@number_of_pages).each do |num| %>
+     <a href="/tracksall?p=<% num %>#"><% num %></a>
+     <% end %>
+
+
+
+
 </div>  

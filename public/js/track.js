@@ -1,5 +1,6 @@
 $(function() {
   // var track_source = [];
+
   var tracklist = $('.pure-g').find('audio').toArray();
   var $canvases = $('canvas');
 
@@ -13,7 +14,7 @@ $(function() {
   // };
 
   var x = tracklist.length; // Count total audio players
- 
+  console.log(3);
   $(".play-bt-track").click(function(e){
     e.preventDefault();
     var idx = $(this).parents('.tracks').index();
@@ -21,7 +22,7 @@ $(function() {
     console.log(tracklist[idx], "playing");
     $(".message-track").eq(idx).text("playing " + " " + (tracklist[idx].src.split('/').splice(-1)[0]));
   });
-  
+
   $(".pause-bt-track").click(function(e){
     e.preventDefault();
     var idx = $(this).parents('.tracks').index();

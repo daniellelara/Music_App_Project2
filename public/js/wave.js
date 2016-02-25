@@ -1,6 +1,6 @@
 function makinWaves(audio, canvas) {
 
-  console.log(audio, canvas);
+  
 
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
   var context = new AudioContext();

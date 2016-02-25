@@ -25,7 +25,7 @@
 @media (max-width: 47.999em) { .custom-menu-3 { text-align: left; }
   .custom-toggle { display: block; }
   nav { overflow: hidden; } }
-.users { width: 100%; height: 70px; background-color: grey; margin: 10px 80px 10px 80px; font-family: "HelveticaNeue-Light"; }
+.users { width: 30%; height: 70px; background-color: grey; margin: 10px 80px 10px 80px; font-family: "HelveticaNeue-Light"; position: relative; }
 
 .button-small { font-size: 60%; }
 
@@ -38,6 +38,8 @@
 .options { margin: 0 auto; text-align: center; width: 100%; height: 30px; }
 
 select { background: grey; font-family: HelveticaNeue-Light; font-size: 8px; }
+
+.track-page { margin-left: 86px; }
 
 div.track-pic { background: black; border: 2px solid #E6EAEE; line-height: 0; }
 
@@ -56,20 +58,25 @@ a:hover { text-decoration: underline; }
 
 a.inline { font-size: 12px; display: block; text-align: center; }
 
-.user-page { margin-left: 20px; }
-
-.profile { text-align: right; font-size: 20px; }
+.profile { text-align: right; font-size: 14px; background: #7E7D7B; }
+.profile p { margin-top: 20px; line-height: 15px; }
 
 .profile-pic { margin: 20px; float: right; border: 1px solid grey; }
 
-.playlist-canvas { position: relative; width: 100%; height: 90px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
+a.username { position: absolute; top: 20px; }
+
+.user-own-page { text-align: right; font-size: 14px; background: #7E7D7B; margin-top: 300px; }
+.user-own-page p { margin-top: 20px; line-height: 15px; }
+
+.playlist-canvas { position: relative; width: 100%; height: 90px; margin-top: -47px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
 
 .playlist_tracks { height: 50px; background: red; font-family: "HelveticaNeue-Light"; }
 .playlist_tracks p { width: 100%; }
 
-.playlist { margin: 0 auto; margin-top: 50px; width: 600px; }
-.playlist img { width: 600px; height: 120px; }
+.playlist { margin: 0 auto; margin-top: 40px; width: 500px; }
+.playlist img { width: 500px; height: 120px; }
 .playlist .controller { background-color: #333; color: #fff; width: 100%; height: 60px; text-align: center; font-size: 50px; }
+.playlist .controller a#play-all { font-size: 30px; }
 .playlist .playlist_tracks { margin: 2px 0px; }
 .playlist .playlist_tracks ul.track_info { text-align: center; margin: 0; padding: 0; list-style-type: none; }
 .playlist .playlist_tracks ul.track_info li { line-height: 50px; margin: 0px 10px; display: block; }
