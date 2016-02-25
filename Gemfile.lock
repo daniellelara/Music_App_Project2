@@ -91,7 +91,8 @@ GEM
       thread_safe (~> 0.1)
 
 PLATFORMS
-  ruby '2.2.4'
+  ruby
+  unknown
 
 DEPENDENCIES
   activerecord
