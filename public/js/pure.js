@@ -1,9 +1,6 @@
-(function (window, document) {
+$(function () {
+    console.log("pure loaded");
 
-setTimeout(purejs, 300);
-
-
-function purejs() {
     var menu = document.getElementById('menu'),
         WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
@@ -40,6 +37,5 @@ function purejs() {
     });
 
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
-}
 
-})(this, this.document);
+});

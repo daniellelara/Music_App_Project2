@@ -5,16 +5,23 @@
 
 .pure-menu-link {
     color: #E6EAEE;
+    background-color: #7E7D7B;
+    padding: 0.4em 1em;
+
 }
+
+#menuLink1.pure-menu-link {
+    opacity: 0.5;
+}
+
 
 
 
 .custom-wrapper {
     background-color: #7E7D7B;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     -webkit-font-smoothing: antialiased;
     height: 2.1em;
-    overflow: hidden;
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
     -ms-transition: height 0.5s;
@@ -32,10 +39,11 @@
 .custom-toggle {
     width: 34px;
     height: 34px;
-    display: inline-block;
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
+    display: none;
 }
 
 .custom-toggle .bar {
@@ -75,6 +83,9 @@
     transform: rotate(-45deg);
 }
 
+.pure-menu-active {
+    background-color: #7E7D7B;
+}
 @media (max-width: 47.999em) {
 
     .custom-menu-3 {
@@ -85,4 +96,12 @@
         display: block;
     }
 
+    nav {
+        overflow: hidden;
+    }
+
 }
+
+
+
+

@@ -1,34 +1,45 @@
-.track-margin {
-  margin-top: -20px;
+// .track-margin {
+//   margin-top: -20px;
+// }
+
+
+div.track-pic {
+  background: black;
+  border: 2px solid #E6EAEE;
+  line-height: 0;
+}
+img.track-pic {  
+  height: 90px;
+  width: 100%;
+  opacity: 0.5;
+
+  
 }
 
-.inline {
-  display: inline-block;
+form.inline {
+  position: absolute;
+      bottom: 0;
+  padding: 5px;
+  margin-left: 20px;
+
+}
+
+.message-track {
+  color: black;
   font-family: HelveticaNeue-Light;
   font-size: 12px;
-  
-}
-
-img.track-pic {
-  margin-top: 0px;
-  margin-left: 0px;
-  
-  height: 50px;
-  width: 100px;
-  opacity: 0.75;
-  
+  margin: 0px 30px;
+  margin-top: -10px;
 }
 
 .tracks {
-  border-radius: 1px;
-  //border: 1px solid white;
-  width: 60%;
-  height: 120px;
-  background-color: #acaaad;
-  margin: 10px 80px;
-  font-family: "HelveticaNeue-Light";
-  opacity: 0.75;
-  z-index: 1;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  width: 200px;
+  height: 250px;
+  background-color: #D1CCD3;  
+  
 }
 
 .control {

@@ -1,14 +1,16 @@
 .pure-menu-heading { color: #E6EAEE; }
 
-.pure-menu-link { color: #E6EAEE; }
+.pure-menu-link { color: #E6EAEE; background-color: #7E7D7B; padding: 0.4em 1em; }
 
-.custom-wrapper { background-color: #7E7D7B; margin-bottom: 1em; -webkit-font-smoothing: antialiased; height: 2.1em; overflow: hidden; -webkit-transition: height 0.5s; -moz-transition: height 0.5s; -ms-transition: height 0.5s; transition: height 0.5s; }
+#menuLink1.pure-menu-link { opacity: 0.5; }
+
+.custom-wrapper { background-color: #7E7D7B; -webkit-font-smoothing: antialiased; height: 2.1em; -webkit-transition: height 0.5s; -moz-transition: height 0.5s; -ms-transition: height 0.5s; transition: height 0.5s; }
 
 .custom-wrapper.open { height: 14em; }
 
 .custom-menu-3 { text-align: right; }
 
-.custom-toggle { width: 34px; height: 34px; display: inline-block; position: absolute; top: 0; right: 0; }
+.custom-toggle { width: 34px; height: 34px; display: block; position: absolute; top: 0; right: 0; display: none; }
 
 .custom-toggle .bar { background-color: #E6EAEE; color: #E6EAEE; display: block; width: 20px; height: 2px; border-radius: 100px; position: absolute; top: 18px; right: 7px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; transition: all 0.5s; }
 
@@ -18,11 +20,12 @@
 
 .custom-toggle.x .bar:first-child { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 
-@media (max-width: 47.999em) { .custom-menu-3 { text-align: left; }
-  .custom-toggle { display: block; } }
-.users { width: 100%; height: 70px; background-color: grey; margin: 10px 80px 10px 80px; font-family: "HelveticaNeue-Light"; }
+.pure-menu-active { background-color: #7E7D7B; }
 
-.tracks { border-radius: 1px; border: 1px solid lightblue; width: 80%; height: 120px; background-color: #d1ccd3; margin: 10px 80px; font-family: "HelveticaNeue-Light"; opacity: 0.75; z-index: 1; }
+@media (max-width: 47.999em) { .custom-menu-3 { text-align: left; }
+  .custom-toggle { display: block; }
+  nav { overflow: hidden; } }
+.users { width: 100%; height: 70px; background-color: grey; margin: 10px 80px 10px 80px; font-family: "HelveticaNeue-Light"; }
 
 .playlist_tracks { width: 100%; height: 30px; background-color: grey; margin: 5px 200px; font-family: "HelveticaNeue-Light"; }
 
@@ -32,34 +35,36 @@
 
 .button-xsmall { font-size: 60%; }
 
-.track-canvas { position: relative; width: 100%; height: 90px; z-index: -1; margin-top: -30px; }
+.track-canvas { padding: 0; margin-top: -27px; position: relative; width: 100%; height: 55px; }
 
 .playlist-canvas { position: relative; width: 100%; height: 90px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
 
-.inline { display: inline-block; }
+.play-bt-track, .pause-bt-track { font-size: 30px; display: inline-block; cursor: pointer; }
 
-.play-bt-track { height: 20px; width: 20px; background-image: url("http://cdn.spotcointeractive.com/websites/hamilton/_img/play.png"); background-position: center; }
+.options { margin: 0 auto; text-align: center; width: 100%; height: 30px; }
 
-.pause-bt-track { height: 20px; width: 20px; background-image: url("../images/pause.png"); background-position: center; margin: 5px; }
+div.track-pic { background: black; border: 2px solid #E6EAEE; line-height: 0; }
 
-.track-margin { margin-top: -20px; }
+img.track-pic { height: 90px; width: 100%; opacity: 0.5; }
 
-.inline { display: inline-block; font-family: HelveticaNeue-Light; font-size: 12px; }
+form.inline { position: absolute; bottom: 0; padding: 5px; margin-left: 20px; }
 
-img.track-pic { margin-top: 0px; margin-left: 0px; height: 50px; width: 100px; opacity: 0.75; }
+.message-track { color: black; font-family: HelveticaNeue-Light; font-size: 12px; margin: 0px 30px; margin-top: -10px; }
 
-.tracks { border-radius: 1px; width: 60%; height: 120px; background-color: #acaaad; margin: 10px 80px; font-family: "HelveticaNeue-Light"; opacity: 0.75; z-index: 1; }
+.tracks { position: relative; margin: auto; margin-top: 20px; width: 200px; height: 250px; background-color: #D1CCD3; }
 
 .control { float: right; }
+
+a { text-decoration: none; font-family: "HelveticaNeue-Light"; color: #E6EAEE; }
+a:hover { text-decoration: underline; }
+
+a.inline { font-size: 12px; display: block; text-align: center; }
 
 body { font-family: "HelveticaNeue-Light"; background: #383739; color: #E6EAEE; }
 
 .centered { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 input { color: #333; }
-
-a { text-decoration: none; color: white; }
-a:hover { text-decoration: underline; }
 
 img { margin-right: 20px; }
 

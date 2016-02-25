@@ -16,17 +16,18 @@ $(function() {
  
   $(".play-bt-track").click(function(e){
     e.preventDefault();
-    var idx = $(this).parent().index();
+    var idx = $(this).parents('.tracks').index();
     tracklist[idx].play();
     console.log(tracklist[idx], "playing");
-    $(".message").text("playing");
+    $(".message-track").eq(idx).text("playing " + " " + (tracklist[idx].src.split('/').splice(-1)[0]));
   });
+  
   $(".pause-bt-track").click(function(e){
     e.preventDefault();
-    var idx = $(this).parent().index();
+    var idx = $(this).parents('.tracks').index();
     tracklist[idx].pause();
     console.log(tracklist[idx], "playing");
-    $(".message").text("paused");
+    $(".message-track").eq(idx).text("");
   });
 
 });        

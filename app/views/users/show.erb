@@ -26,19 +26,27 @@
   <div class="pure-g">
     <% @tracks.each do |track| %>
       <div class="pure-u-1 pure-u-md-1-3 tracks">
+      <div class="track-pic">
         <% if track.image.url %>
           <img class="track-pic" src="<%= track.image.url %>" width=50 height=50>
         <% else %>
           <img class="track-pic" src="/uploads/H06-anika.jpg" width=50 height=50>
         <% end %>
-
+        </div>
         <canvas class="track-canvas">
           An alternative text describing what your canvas displays. 
         </canvas>
 
-        <div class="track-margin">
+        <div class="options">
+          <i class="play-bt-track fa fa-play-circle-o"></i>
+          <i class="pause-bt-track fa fa-pause-circle-o"></i>
+          <a  href="/uploads/audio/<%= track.file %>" download><i class="pause-bt-track fa fa-arrow-circle-down"></i></a>
+        </div>
+        <br>
+        <marquee class ="inline control message-track"></marquee>
           <audio class="inline" preload="none" src="<%= track.file.url %>"></audio>
           <a class="inline" href="/tracks/<%= track.id %>"><%= track.title %> / <%= track.artist %></a>
+
           <form method="POST" class="inline" action="/tracks/<%= track.id %>">
             <input type="hidden" name="_method" value="PUT">
             <select name="playlist_id">
@@ -48,14 +56,12 @@
             </select>
             <input class="button-xsmall pure-button" type="submit" value="add">
           </form>
-          <a class="inline" href="/uploads/audio/<%= track.file %>" download>download</a>
-          
-          <div class ="inline control message-track"></div>
-          <div class="inline control play-bt-track">play</div>
-          <div class="inline control pause-bt-track"></div>
           
           
-        </div>
+         
+          
+          
+       
 
         
         

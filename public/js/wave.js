@@ -23,8 +23,8 @@ function makinWaves(audio, canvas) {
   function draw() {
     drawVisual = requestAnimationFrame(draw);
     analyser.getByteTimeDomainData(dataArray);
-    canvasCtx.fillStyle = '#acaaad';
-    canvasCtx.fillRect(0, 0, canvasWidth, canvasHeight);
+    canvasCtx.fillStyle = "rgba(0, 0, 200, 0.5)";
+    canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight);
     canvasCtx.lineWidth = 5;
     canvasCtx.strokeStyle = '#E6EAEE';
     canvasCtx.shadowBlur = 15

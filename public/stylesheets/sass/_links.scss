@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  font-family: "HelveticaNeue-Light";
+  color: #E6EAEE; 
+  &:hover {text-decoration: underline;}
+}
+
+a.inline {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}

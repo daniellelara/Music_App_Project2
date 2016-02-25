@@ -17,10 +17,12 @@ assets do
     '/bower_components/jquery/dist/jquery.min.js',
     '/js/pure.js',
     '/js/wave.js',
+    '/js/dropdown.js',
     '/js/playlist.js',
     '/js/track.js'  ]
   css :application, [
     '/bower_components/pure/pure-min.css',
+    '/bower_components/pure/grids-responsive-min.css',
     '/stylesheets/style.css'
   ]
   js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
