@@ -1,0 +1,26 @@
+{
+  "name": "alize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+     "bower": "1.7.x"
+   },
+   "engine": {
+     "node": "5.0.x",
+     "npm": "1.3.x"
+   },
+   "scripts": {
+     "postinstall": "./node_modules/bower/bin/bower install"
+   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniellelara/Music_App_Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniellelara/Music_App_Project2/issues"
+  },
+  "homepage": "https://github.com/daniellelara/Music_App_Project2#readme"
+}
