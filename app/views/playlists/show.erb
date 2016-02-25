@@ -9,6 +9,11 @@
   <p>Please add some <a href="/tracks">tracks</a></p> 
 <% else %>
   <div class="pure-g playlist">
+      <% if @playlist.image_identifier %>
+              <img class="media-object" src="/uploads/images/<%= @playlist.image_identifier %>" width=50 height=50>
+            <% else %>
+              <img class="media-object" src="/uploads/H06-anika.jpg" width=50 height=50>
+            <% end %>  
       <canvas class="playlist-canvas">
        An alternative text describing what your canvas displays. 
       </canvas>
@@ -16,22 +21,29 @@
 
     <div class="pure-u-1 pure-u-md-1-3 controller">
       <div class ="message"></div>
-      <a id="play-bt" href="#">play</a>
-      <a id="pause-bt" href="#">pause</a>
-      <a id="stop-bt" href="#">stop</a>
-      <a id="next-bt" href="#">next</a>
-      <a id="previous-bt" href="#">previous</a>
+      <i class="previous-bt fa fa-arrow-circle-o-left"></i>
+      <i class="play-bt fa fa-play-circle-o"></i>
+      <i class="pause-bt fa fa-pause-circle-o"></i>
+      <i class="stop-bt fa fa-stop-circle-o"></i>
+      <i class="next-bt fa fa-arrow-circle-o-right"></i>
+      <br>
       <a id="play-all" href="#">play all</a>
     </div>
 
     <% @tracks.each do |track| %>
     <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
       <input class="filename" type="hidden" value="<%= track.file.url %>">
-      <%= track.title %>
-      <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
-        <input type="hidden" name="_method" value="DELETE"> 
-        <input type="submit" value="Delete" class="btn btn-default">
-      </form>
+      <ul class="track_info">
+        <li><%= track.title %></li>
+        <li><%= track.artist %></li>
+        <li><%= track.genre %></li>
+        <li>
+          <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
+            <input type="hidden" name="_method" value="DELETE"> 
+            <input type="submit" value="Delete" class="btn btn-default">
+          </form>
+        </li>
+      </ul>
     </div>
     <% end %>
   </div> 

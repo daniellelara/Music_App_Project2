@@ -1,7 +1,9 @@
+<div class="pure-g">
 
 <% if @current_user == @user %>
+
   <p><%= @user.username %></p>
-  <p><a href="/tracks">my tracks </a>|<a href="/playlists">my playlists</a>|<a href="/users/<%= @user.id %>/edit"> edit profile</a>
+  <p><a href="/tracks">my tracks </a>|<a href="/playlists">my playlists</a>|<a href="/users/<%= @user.id %>/edit"> edit profile</a></p>
   <% if @user.image_identifier %>
     <img class="media-object" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
   <% else %>
@@ -14,60 +16,63 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete" class="btn btn-default">
   </form>
-  
 <% else %>
-  
+  <div class="pure-u-1 user-page">
   <% if @user.image_identifier %>
     <img class="media-object" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
   <% else %>
     <img class="media-object" src="/images/default.png" alt="<%= @user.username %>'s image">
   <% end %>
   <%= @user.name %> / <%= @user.city %>
+  </div>
+  <div class="pure-u-1 user-page">
+<p>Tracks</p>
+  </div>
+
+  </div>
   <div class="pure-g">
     <% @tracks.each do |track| %>
-      <div class="pure-u-1 pure-u-md-1-3 tracks">
-      <div class="track-pic">
-        <% if track.image.url %>
-          <img class="track-pic" src="<%= track.image.url %>" width=50 height=50>
-        <% else %>
-          <img class="track-pic" src="/uploads/H06-anika.jpg" width=50 height=50>
-        <% end %>
-        </div>
-        <canvas class="track-canvas">
-          An alternative text describing what your canvas displays. 
-        </canvas>
-
-        <div class="options">
-          <i class="play-bt-track fa fa-play-circle-o"></i>
-          <i class="pause-bt-track fa fa-pause-circle-o"></i>
-          <a  href="/uploads/audio/<%= track.file %>" download><i class="pause-bt-track fa fa-arrow-circle-down"></i></a>
-        </div>
-        <br>
-        <marquee class ="inline control message-track"></marquee>
-          <audio class="inline" preload="none" src="<%= track.file.url %>"></audio>
-          <a class="inline" href="/tracks/<%= track.id %>"><%= track.title %> / <%= track.artist %></a>
-
-          <form method="POST" class="inline" action="/tracks/<%= track.id %>">
-            <input type="hidden" name="_method" value="PUT">
-            <select name="playlist_id">
-              <% current_user.playlists.each do |playlist| %>
-              <option value="<%= playlist.id %>"><%= playlist.title %></option>
-              <% end %>
-            </select>
-            <input class="button-xsmall pure-button" type="submit" value="add">
-          </form>
-          
-          
-         
-          
-          
-       
-
-        
-        
-        
-      </div>
+    <div class="pure-u-1 pure-u-md-1-3 tracks">
+    <div class="track-pic">
+      <% if track.image.url %>
+        <img class="track-pic" src="<%= track.image.url %>" width=50 height=50>
+      <% else %>
+        <img class="track-pic" src="/uploads/H06-anika.jpg" width=50 height=50>
       <% end %>
+      </div>
+      <canvas class="track-canvas">
+        An alternative text describing what your canvas displays. 
+      </canvas>
+
+      <div class="options">
+        <i class="play-bt-track fa fa-play-circle-o"></i>
+        <i class="pause-bt-track fa fa-pause-circle-o"></i>
+        <a  href="/uploads/audio/<%= track.file %>" download><i class="pause-bt-track fa fa-arrow-circle-down"></i></a>
+      </div>
+      <br>
+      <marquee class ="inline control message-track"></marquee>
+        <audio class="inline" preload="none" src="<%= track.file.url %>"></audio>
+        <a class="inline" href="/tracks/<%= track.id %>"><%= track.title %> / <%= track.artist %></a>
+
+        <form method="POST" action="/tracks/<%= track.id %>/add">
+            <input type="submit" value="add track" class="pure-button button-small">
+                      
+        </form>
+
+        <form method="POST" class="inline" action="/tracks/<%= track.id %>">
+          <input type="hidden" name="_method" value="PUT">
+          <select name="playlist_id">
+            <% current_user.playlists.each do |playlist| %>
+            <option value="<%= playlist.id %>"><%= playlist.title %></option>
+            <% end %>
+          </select>
+          <input class="button-xsmall pure-button" type="submit" value="add playlist">
+        </form>     
+        
+       </div>
+    <% end %>
+
+
 
     <% @playlists.each do |playlist| %>
       <div class="pure-u-1 pure-u-md-1-3">
