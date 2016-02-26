@@ -1,24 +1,30 @@
+<div class="centered register">
+<p><i class="fa fa-upload"></i> upload track</p>
+<hr/>
+
 <form id="add_track" class="pure-form pure-form-stacked" method="post" action="/tracks" enctype="multipart/form-data">
   
     <fieldset>
-        <legend>add track</legend>
+        
 
-        <label for="title">title</label>
-        <input name="track[title]" type="text" class="form-control" id="tracktitle" placeholder="title">
+        <!-- <label for="title">title</label> -->
+        <input name="track[title]" type="text" class="square form-control" id="tracktitle" placeholder="title">
 
-        <label for="artist">artist</label>
-        <input name="track[artist]" type="text" class="form-control" id="artist" placeholder="artst">
+        <!-- <label for="artist">artist</label> -->
+        <input name="track[artist]" type="text" class="square form-control" id="artist" placeholder="artst">
 
-        <label for="file">file</label>
+        <label for="file">music file</label>
         <input name="track[file]" type="file" class="form-control" id="file" >
 
-        <label for="image">image</label>
+        <label for="image">track image</label>
         <input name="track[image]" type="file" class="form-control" id="image" >
 
-        <label for="genre">genre</label>
-        <input name="track[genre]" type="text" class="form-control" id="genre" placeholder="genre">
+        <!-- <label for="genre">genre</label> -->
+        <input name="track[genre]" type="text" class="square form-control" id="genre" placeholder="genre">
 
 
-        <button type="submit" class="pure-button pure-button-primary">add</button>
+        <button type="submit" class="pure-button">add</button>
     </fieldset>
 </form>
+
+</div>

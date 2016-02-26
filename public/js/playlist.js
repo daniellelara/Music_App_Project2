@@ -31,16 +31,16 @@ $(function() {
 
      $(".play-bt").click(function(){
       $audio[0].play();
-      $(".message").text("Music started");
+      $(".message").text("music started");
     })
      $(".pause-bt").click(function(){
       $audio[0].pause();
-      $(".message").text("Music paused");
+      $(".message").text("music paused");
     })
      $(".stop-bt").click(function(){
        $audio[0].pause();
        $audio[0].currentTime = 0;
-       $(".message").text("Music Stopped");
+       $(".message").text("music Stopped");
      })
      $(".next-bt").click(function(){
 
@@ -48,25 +48,25 @@ $(function() {
       $audio[0].pause();
       $audio[0].src = filenames[currentIdx];
       $audio[0].play();
-      $(".message").text("Track: "+z);
+      $(".message").text("Track: "+ filenames[currentIdx]);
     }) 
-     $("#previous-bt").click(function(){
+     $(".previous-bt").click(function(){
       currentIdx--;
       $audio[0].pause();
       $audio[0].src = filenames[currentIdx];
       $audio[0].play();
-      $(".message").text("Track: "+z);
+      $(".message").text("Track: ");
     }) 
 
      $("#play-all").click(function(){
        $audio[0].play();
-       $(".message").text("Track: "+i);
+       $(".message").text("track: $audio[0] ");
        $audio[0].addEventListener('ended', function(e){
         currentIdx++;
         $audio[0].pause();
         $audio[0].src = filenames[currentIdx];
         $audio[0].play();
-        $(".message").text("Track: "+i);
+        $(".message").text("Track: "+ filenames[currentIdx]);
       });
      });
    });        

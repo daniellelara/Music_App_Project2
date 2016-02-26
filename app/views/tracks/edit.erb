@@ -1,22 +1,29 @@
+<div class="centered register">
+<p>edit track</p>
+<hr/>
+
 <form id="add_track" class="pure-form pure-form-stacked" enctype="multipart/form-data" method="post" action="/tracks/<%= @track.id %>">
 <input type="hidden" name="_method" value="put">
   
-    <fieldset>
-        <legend>add track</legend>
+    
 
-        <label for="title">title</label>
-        <input name="track[title]" type="text" class="form-control" id="tracktitle"  value="<%= @track.title %>">
+        <!-- <label for="title">title</label> -->
+        <input name="track[title]" type="text" class="square form-control" id="tracktitle"  value="<%= @track.title %>">
 
-        <label for="artist">artist</label>
-        <input name="track[artist]" type="text" class="form-control" id="artist" value="<%= @track.artist %>">
+        <!-- <label for="artist">artist</label> -->
+        <input name="track[artist]" type="text" class="square form-control" id="artist" value="<%= @track.artist %>">
 
         <label for="file">file</label>
         <input name="track[file]" type="file" class="form-control" id="file" value="<%= @track.file %>" >
 
-        <label for="genre">genre</label>
-        <input name="track[genre]" type="text" class="form-control" id="genre"  value="<%= @track.genre %>">
+        <label for="image">track image</label>
+        <input name="track[image]" type="file" class="form-control" id="image" value="<%= @track.image %>" >
+
+        <!-- <label for="genre">genre</label> -->
+        <input name="track[genre]" type="text" class="square form-control" id="genre"  value="<%= @track.genre %>">
 
 
-        <button type="submit" class="pure-button pure-button-primary">update</button>
+        <button type="submit" class="pure-button">update</button>
     </fieldset>
 </form>
+</div>

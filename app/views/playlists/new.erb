@@ -1,12 +1,17 @@
+
+<div class="centered register">
+<p>create playlist</p>
+<hr/>
+
 <form id="add_playlist" class="pure-form pure-form-stacked" method="post" action="/playlists" enctype="multipart/form-data">
   
     <fieldset>
-        <legend>add track</legend>
+       
 
-        <label for="title">title</label>
+       <!--  <label for="title">title</label> -->
         <input name="playlist[title]" type="text" class="form-control" id="playlisttitle" placeholder="title">
 
-        <label for="genre">genre</label>
+       <!--  <label for="genre">genre</label> -->
         <input name="playlist[genre]" type="text" class="form-control" id="genre" placeholder="artst">
 
         <label for="image">image</label>
@@ -14,6 +19,7 @@
 
 
 
-        <button type="submit" class="pure-button pure-button-primary">add playlist</button>
+        <button type="submit" class="pure-button">add playlist</button>
     </fieldset>
 </form>
+</div>

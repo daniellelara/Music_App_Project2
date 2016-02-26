@@ -2,7 +2,8 @@
 //   margin-top: -20px;
 // }
 .track-page {
-  margin-left: 86px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 div.track-pic {
@@ -37,11 +38,16 @@ form.inline {
 .tracks {
   position: relative;
   margin: auto;
-  margin-top: 20px;
+  margin: 20px;
+
   width: 200px;
   height: 250px;
   background-color: #D1CCD3;  
   
+}
+
+.zoom {
+  zoom: 150%;
 }
 
 .control {

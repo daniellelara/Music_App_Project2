@@ -19,7 +19,8 @@ assets do
     '/js/wave.js',
     '/js/dropdown.js',
     '/js/playlist.js',
-    '/js/track.js'  ]
+    '/js/track.js',
+    '/js/one.js'  ]
   css :application, [
     '/bower_components/pure/pure-min.css',
     '/bower_components/pure/grids-responsive-min.css',

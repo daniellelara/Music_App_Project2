@@ -36,7 +36,9 @@ end
 get "/tracks/:id" do
   authorize!
   @track = Track.find(params[:id])
+  @users = @track.users 
     erb :"tracks/show"
+
   
 end
 

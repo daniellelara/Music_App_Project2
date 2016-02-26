@@ -28,7 +28,7 @@
     <div class="options">
       <i class="play-bt-track fa fa-play-circle-o"></i>
       <i class="pause-bt-track fa fa-pause-circle-o"></i>
-      <a  href="/uploads/audio/<%= track.file %>" download><i class="pause-bt-track fa fa-arrow-circle-down"></i></a>
+      <a  href="<%= track.file.url %>" download><i class="download-bt-track fa fa-arrow-circle-down"></i></a>
     </div>
     <br>
     <marquee class ="inline control message-track"></marquee>
@@ -43,18 +43,9 @@
           <% end %>
         </select>
         <input class="button-xsmall pure-button" type="submit" value="add">
-      </form>
+      </form>    
       
-      
-     
-      
-      
-   
-
-    
-    
-    
-  </div>
+    </div>
   <% end %>
   <% end %>
 </div>

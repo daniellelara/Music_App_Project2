@@ -39,6 +39,7 @@ get "/playlists/:id" do
   authorize!
   @playlist = Playlist.find(params[:id])
   @tracks = @playlist.tracks
+  @users = @playlist.users
   p @tracks
     erb :"playlists/show"
 end
@@ -52,6 +53,13 @@ get "/playlists/:id/addtrack" do
   @playlist = Playlist.find(params[:id])
   
 end 
+
+post "/playlists/:id/add" do
+  authorize!
+  @playlist = Playlist.find(params[:id])
+  @playlist.users << @current_user
+  redirect "/playlists"
+end  
 
 # EDIT
 get "/playlists/:id/edit" do

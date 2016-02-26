@@ -27,12 +27,13 @@ get "/tracksall" do
 
   @tracks = Track.all.limit(5).offset(offset)
 
+
   erb :'static/alltrack'
 end 
 
 get "/playlistall" do
-  @tracks = Track.all.order(title: :desc)
+  @playlists = Playlist.all.order(title: :desc)
 
-  erb :'static/alltrack'
+  erb :'static/playlists'
 end  
 

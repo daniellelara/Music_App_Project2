@@ -1,10 +1,27 @@
-<h2><%= @playlist.title %></h2>
 
-<form method="post" action="/playlists/<%= @playlist.id %>">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete" class="btn btn-default">
-</form>
-
+<div class="pure-g">
+<div class="pure-u-1 pure-u-md-1-3 ">
+<p></p>
+</div>
+  <div class="pure-u-1 pure-u-md-1-3 title">
+  <p><%= @playlist.title %></p>
+  </div>
+  <% if @users.include?(@current_user) %>
+  <div class="pure-u-1- pure-u-md-1-3 delete">
+  <form method="post" action="/playlists/<%= @playlist.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete" class="button-small pure-button">
+  </form>
+  </div>
+  <% else %>
+  <div class="pure-u-1- pure-u-md-1-3 delete">
+  <form method="POST" action="/playlists/<%= @playlist.id %>/add">
+      <input type="submit" value="add playlist" class="pure-button button-small">
+                
+  </form>
+  </div>
+  <% end %>
+</div>
 <% if @tracks == [] %>
   <p>Please add some <a href="/tracks">tracks</a></p> 
 <% else %>
@@ -18,7 +35,7 @@
        An alternative text describing what your canvas displays. 
       </canvas>
       <audio></audio>
-      <div class ="message"></div>
+      <marquee class ="inline control message"></marquee>
     <div class="pure-u-1 pure-u-md-1-3 controller">
       
       <i class="previous-bt fa fa-arrow-circle-o-left"></i>
@@ -35,13 +52,18 @@
     <div class="pure-u-1 pure-u-md-1-3 playlist_tracks">
       <input class="filename" type="hidden" value="<%= track.file.url %>">
       <ul class="track_info">
-        <li><%= track.title %></li>
-        <li><%= track.artist %></li>
-        <li><%= track.genre %></li>
+      <li><% if track.image.url %>
+      <img class="play-track-pic" src="<%= track.image.url %>" width=50 height=50>
+    <% else %>
+      <img class="play-track-pic" src="/uploads/H06-anika.jpg" width=50 height=50>
+    <% end %></li>
+        <li>title: <%= track.title %></li>
+        <li>artist: <%= track.artist %></li>
+        <li> <%= track.genre %></li>
         <li>
           <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
             <input type="hidden" name="_method" value="DELETE"> 
-            <input type="submit" value="Delete" class="btn btn-default">
+            <input type="submit" value="delete" class="button-xsmall pure-button">
           </form>
         </li>
       </ul>

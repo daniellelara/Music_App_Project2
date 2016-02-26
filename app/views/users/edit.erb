@@ -1,26 +1,30 @@
-
+<div class="centered register">
+<p>edit profile</p>
+<hr/>
 <form id="register" class="pure-form pure-form-stacked" enctype="multipart/form-data" method="post" action="/users/<%= @user.id %>">
   <input type="hidden" name="_method" value="put">
     <fieldset>
-        <legend>edit profile</legend>
+        
 
-        <label for="name">name</label>
-        <input name="user[name]" type="text" class="form-control" id="username" placeholder="name" value="<%= @user.name %>">
+        <!-- <label for="name">name</label> -->
+        <input name="user[name]" type="text" class="square form-control" id="username" placeholder="name" value="<%= @user.name %>">
 
-        <label for="username">Username</label>
-        <input name="user[username]" type="text" class="form-control" id="username" placeholder="Username" value="<%= @user.username %>">
+        <!-- <label for="username">Username</label> -->
+        <input name="user[username]" type="text" class="square form-control" id="username" placeholder="Username" value="<%= @user.username %>">
 
-        <label for="image">Image</label>
-        <input name="user[image]" type="file" class="form-control" id="image" placeholder="Image" value="<%= @user.image %>">
+        <label for="image">profile image</label>
+        <input name="user[image]" type="file" class="form-control" id="image" placeholder="image" value="<%= @user.image %>">
 
-        <label for="email">e-mail address</label>
-        <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email" value="<%= @user.email %>">
+        <!-- <label for="email">e-mail address</label> -->
+        <input name="user[email]" type="email" class="square form-control" id="email" placeholder="e-mail" value="<%= @user.email %>">
 
-        <label for="city">city</label>
-        <input name="user[city]" type="text" class="form-control" id="city" placeholder="city" value="<%= @user.city %>">
+       <!--  <label for="city">city</label> -->
+        <input name="user[city]" type="text" class="square form-control" id="city" placeholder="city" value="<%= @user.city %>">
 
 
-        <button type="submit" class="pure-button pure-button-primary">update</button>
+        <button type="submit" class="pure-button">update</button>
     </fieldset>
 </form>
+
+</div>
 
