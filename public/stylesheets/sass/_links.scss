@@ -10,3 +10,14 @@ a.inline {
   display: block;
   text-align: center;
 }
+
+a.link {
+  text-decoration: underline;
+  pointer: cursor;
+}
+
+.pages {
+  float: right;
+  text-align: right;
+  margin-right: 10px;
+}

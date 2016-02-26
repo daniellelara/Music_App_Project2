@@ -17,8 +17,8 @@ get "/results" do
 end
 
 get "/tracksall" do
-  page = params[:p].to_i || 1
-  offset = (page +1) * 5
+  page = params[:p] ? params[:p].to_i : 1
+  offset = (page - 1) * 5
   number_of_tracks = Track.all.count
 
   @number_of_pages = number_of_tracks / 5

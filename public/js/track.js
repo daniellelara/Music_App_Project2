@@ -1,6 +1,11 @@
 $(function() {
   // var track_source = [];
-
+  console.log();
+console.log("loaded");
+  if(window.location.pathname !== '/tracksall' && window.location.pathname !== '/tracks' && !window.location.pathname.match(/\/users\/[0-9]+/) && window.location.pathname !== '/results') {
+    return;
+  }
+  console.log("loadedtwo");
   var tracklist = $('.pure-g').find('audio').toArray();
   var $canvases = $('canvas');
 

@@ -7,13 +7,11 @@ if(!window.location.pathname.match(/tracks/)){
 }
 
 console.log("loaded");
-  var track = $('audio');
-  console.log(track);
-  var $canvas = $('canvas');
-  console.log($canvas);
+  var track = $('audio')[0];
+  var canvas = $('canvas')[0];
 
   
-    // makinWaves(track, $canvas);
+  makinWaves(track, canvas);
  
   console.log("working");
   // for(var i=0; i< track_source.length; i++) {
@@ -25,18 +23,18 @@ console.log("loaded");
   console.log(3);
   $(".play-bt-track").click(function(e){
     e.preventDefault();
-    
+    console.log(track);
     track.play();
-    console.log(tracklist[0], "playing");
-    $(".message-track").eq(idx).text("playing " + " " + (tracklist[idx].src.split('/').splice(-1)[0]));
+    console.log(track, "playing");
+    $(".message-track").text("playing " + " " + (track.src.split('/').splice(-1)[0]));
   });
 
   $(".pause-bt-track").click(function(e){
     e.preventDefault();
     var idx = $(this).parents('.tracks').index();
-    tracklist[idx].pause();
-    console.log(tracklist[idx], "playing");
-    $(".message-track").eq(idx).text("");
+    track.pause();
+    console.log(track, "playing");
+    $(".message-track").text("");
   });
 
 });        

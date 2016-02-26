@@ -6,7 +6,7 @@
         <% if user.image_identifier %>
             <img class="media-object" src="/uploads/images/<%= user.image_identifier %>" width=70 height=70 >
           <% else %>
-            <img class="media-object" src="/uploads/images/colorful-triangles-background_yB0qTG6.jpg">
+            <img class="media-object" src="/uploads/images/colorful-triangles-background_yB0qTG6.jpg" width=70 height=70>
         <% end %>
         <a class="username" href="/users/<%= user.id %>"><%= user.username %></a>  
         

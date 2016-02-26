@@ -23,7 +23,9 @@
   <% end %>
 </div>
 <% if @tracks == [] %>
-  <p>Please add some <a href="/tracks">tracks</a></p> 
+<div class="pure-u-1 message-empty">
+  <p>Please add some <a class="link" href="/tracks">tracks</a></p> 
+  </div>
 <% else %>
   <div class="pure-g playlist">
       <% if @playlist.image_identifier %>
@@ -57,9 +59,7 @@
     <% else %>
       <img class="play-track-pic" src="/uploads/H06-anika.jpg" width=50 height=50>
     <% end %></li>
-        <li>title: <%= track.title %></li>
-        <li>artist: <%= track.artist %></li>
-        <li> <%= track.genre %></li>
+        <li><%= track.title %> | <%= track.artist %></li>
         <li>
           <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
             <input type="hidden" name="_method" value="DELETE"> 

@@ -3,15 +3,20 @@
 <img src="/images/myplaylists.png">
   </div>
   <div class="pure-u-1 track-page">
-<a href="/playlists/new">create new</a>
+<a href="/playlists/new"><button class="pure-button">create new</button></a>
 </div>
+<% if @playlists == [] %>
 
+  <div class="pure-u-1 message-empty">
+  You have not created any playlists, <a class="link" href="/playlists/new">create a new</a> one here then add tracks to it via your <a class="link" href="/tracks">tracks</a> page or discover others <a class="link" href="/playlistall">here</a>.
+  </div>
+<% else %>
   <% @playlists.each do |playlist| %>
     
       <div class="pure-u-1 pure-u-md-1-3 users">
       
       <% if playlist.image_identifier %>
-        <img class="media-object" src="/uploads/images/<%= playlist.image_identifier %>" >
+        <img class="media-object" src="/uploads/images/<%= playlist.image_identifier %>" width=50 height=50 >
       <% else %>
         <img class="media-object" src="/uploads/H06-anika.jpg" width=50 height=50>
       <% end %>  
@@ -19,5 +24,7 @@
     
     </div>    
   <% end %>
-
+<% end %>
   </div>
+
+

@@ -1,7 +1,16 @@
 # INDEX
 get "/tracks" do
   authorize!
-  @tracks = @current_user.tracks
+  page = params[:p] ? params[:p].to_i : 1
+  offset = (page - 1) * 5
+  number_of_tracks =  @current_user.tracks.count
+
+  @number_of_pages = number_of_tracks / 5
+  
+  @number_of_pages += 1 if number_of_tracks % 5 != 0
+
+
+  @tracks = @current_user.tracks.limit(6).offset(offset)
   erb :"tracks/index"
 end
 
