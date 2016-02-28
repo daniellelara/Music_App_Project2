@@ -6,12 +6,12 @@ end
 get "/results" do
   if params[:search] && !params[:search].empty?
     @users = User.where("name ILIKE :search OR username ILIKE :search OR city ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc)
-    @tracks =Track.where("title ILIKE :search OR genre ILIKE :search OR  artist ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc)
+    @tracks =Track.where("title ILIKE :search OR genre ILIKE :search OR  artist ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc).limit(5)
     @playlists = Playlist.where("title ILIKE :search OR genre ILIKE :search", { search: "%#{params[:search]}%"}).order(created_at: :asc)
   else  
     @users = User.all
     @playlists = Playlist.all
-    @tracks = Track.all
+    @tracks = Track.all.limit(5)
   end
   erb :'static/results'
 end

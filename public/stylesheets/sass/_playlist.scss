@@ -16,10 +16,11 @@
 .playlist_tracks {
   width: 100%;
   height: 40px;
-  background: grey;
+  background:  #D1CCD3;
   font-family: "HelveticaNeue-Light";
   border-bottom: 1px solid white;
   border-top: 1px solid white;
+  position: relative; 
 
   p {
     width: 100%;
@@ -30,6 +31,8 @@
   margin: 0 auto;
   margin-top: 40px;
   width: 500px;
+  background-color: #D1CCD3;
+  border: 3px solid white;
 
   img {
     width: 500px;
@@ -38,12 +41,15 @@
   }
 
   img.play-track-pic {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .controller {
-    background-color: grey;
+    background-color:  #D1CCD3;
     color: #fff;
     width: 100%;
     height: 60px;
@@ -65,7 +71,7 @@
 
       li {
         line-height: 20px;
-        margin: 0px 10px;
+        margin: 10px 20px;
 
         display: inline-block;
         font-family:"HelveticaNeue-Light";
@@ -89,5 +95,12 @@
 .message-empty {
   margin-left: 20px;
   margin-top: 20px;
+  background-color:  #D1CCD3;
+}
+
+.playlist-delete {
+  position: absolute;
+  top: 13px;
+  right: 0;
 }
 

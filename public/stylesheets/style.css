@@ -68,6 +68,8 @@ a.link { text-decoration: underline; pointer: cursor; }
 
 .pages { float: right; text-align: right; margin-right: 10px; }
 
+.search { font-size: 14px; }
+
 .profile { text-align: right; font-size: 14px; background: #7E7D7B; }
 .profile p { margin-top: 20px; line-height: 15px; }
 
@@ -86,23 +88,25 @@ a.username { position: absolute; top: 20px; }
 
 .message { font-size: 12px; font-family: "HelveticaNeue-Light"; letter-spacing: 2px; }
 
-.playlist_tracks { width: 100%; height: 40px; background: grey; font-family: "HelveticaNeue-Light"; border-bottom: 1px solid white; border-top: 1px solid white; }
+.playlist_tracks { width: 100%; height: 40px; background: #D1CCD3; font-family: "HelveticaNeue-Light"; border-bottom: 1px solid white; border-top: 1px solid white; position: relative; }
 .playlist_tracks p { width: 100%; }
 
-.playlist { margin: 0 auto; margin-top: 40px; width: 500px; }
+.playlist { margin: 0 auto; margin-top: 40px; width: 500px; background-color: #D1CCD3; border: 3px solid white; }
 .playlist img { width: 500px; height: 120px; opacity: 0.5; }
-.playlist img.play-track-pic { width: 30px; height: 30px; }
-.playlist .controller { background-color: grey; color: #fff; width: 100%; height: 60px; text-align: center; font-size: 40px; cursor: pointer; }
+.playlist img.play-track-pic { width: 40px; height: 40px; position: absolute; top: 0; left: 0; }
+.playlist .controller { background-color: #D1CCD3; color: #fff; width: 100%; height: 60px; text-align: center; font-size: 40px; cursor: pointer; }
 .playlist .controller a#play-all { font-size: 30px; }
 .playlist .playlist_tracks { margin: 0px 0px; }
 .playlist .playlist_tracks ul.track_info { margin: 0; padding: 0; list-style-type: none; }
-.playlist .playlist_tracks ul.track_info li { line-height: 20px; margin: 0px 10px; display: inline-block; font-family: "HelveticaNeue-Light"; }
+.playlist .playlist_tracks ul.track_info li { line-height: 20px; margin: 10px 20px; display: inline-block; font-family: "HelveticaNeue-Light"; }
 
 .title { font-family: "HelveticaNeue-Light"; font-size: 30px; font-weight: 100; }
 
 .delete { margin-top: 43px; }
 
-.message-empty { margin-left: 20px; margin-top: 20px; }
+.message-empty { margin-left: 20px; margin-top: 20px; background-color: #D1CCD3; }
+
+.playlist-delete { position: absolute; top: 13px; right: 0; }
 
 body { font-family: "HelveticaNeue-Light"; background: #383739; color: #E6EAEE; }
 

@@ -61,7 +61,7 @@
     <% end %></li>
         <li><%= track.title %> | <%= track.artist %></li>
         <li>
-          <form method="POST" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
+          <form method="POST" class="playlist-delete" action="/playlists/<%= @playlist.id %>/tracks/<%= track.id %>">
             <input type="hidden" name="_method" value="DELETE"> 
             <input type="submit" value="delete" class="button-xsmall pure-button">
           </form>
