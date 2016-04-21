@@ -1,6 +1,5 @@
 get "/" do
-
-    erb :'static/home'
+  erb :'static/home'
 end
 
 get "/results" do
