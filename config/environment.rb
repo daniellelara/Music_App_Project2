@@ -46,34 +46,34 @@ Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
-# CarrierWave.configure do |config|
-#   config.fog_credentials = {
-#     # Configuration for Amazon S3 should be made available through an Environment variable.
-#     # For local installations, export the env variable through the shell OR
-#     # if using Passenger, set an Apache environment variable.
-#     #
-#     # In Heroku, follow http://devcenter.heroku.com/articles/config-vars
-#     #
-#     # $ heroku config:add S3_KEY=your_s3_access_key S3_SECRET=your_s3_secret S3_REGION=eu-west-1 S3_ASSET_URL=http://assets.example.com/ S3_BUCKET_NAME=s3_bucket/folder
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    # Configuration for Amazon S3 should be made available through an Environment variable.
+    # For local installations, export the env variable through the shell OR
+    # if using Passenger, set an Apache environment variable.
+    #
+    # In Heroku, follow http://devcenter.heroku.com/articles/config-vars
+    #
+    # $ heroku config:add S3_KEY=your_s3_access_key S3_SECRET=your_s3_secret S3_REGION=eu-west-1 S3_ASSET_URL=http://assets.example.com/ S3_BUCKET_NAME=s3_bucket/folder
 
-#     # Configuration for Amazon S3
-#     :provider              => 'AWS',
-#     :aws_access_key_id     => ENV['AWS_ACCESS_KEY'],
-#     :aws_secret_access_key => ENV['AWS_SECRET_KEY'],
-#     :region                => 'eu-west-1'
-#   }
+    # Configuration for Amazon S3
+    :provider              => 'AWS',
+    :aws_access_key_id     => ENV['AWS_ACCESS_KEY'],
+    :aws_secret_access_key => ENV['AWS_SECRET_KEY'],
+    :region                => 'eu-west-1'
+  }
 
-#   if development? 
-#     config.storage = :file
-#     config.enable_processing = false
-#     config.root = "#{APP_ROOT}/public/uploads/tmp"
-#     config.store_dir = "#{APP_ROOT}/public/uploads/"
-#   else
-#     config.storage = :fog
-#   end
+  if development? 
+    config.storage = :file
+    config.enable_processing = false
+    config.root = "#{APP_ROOT}/public/uploads/tmp"
+    config.store_dir = "#{APP_ROOT}/public/uploads/"
+  else
+    config.storage = :fog
+  end
 
-#   config.cache_dir = "#{APP_ROOT}/tmp/uploads" 
-#   config.fog_directory = ENV['AWS_BUCKET_NAME']  
+  config.cache_dir = "#{APP_ROOT}/tmp/uploads" 
+  config.fog_directory = ENV['AWS_BUCKET_NAME']  
 
-# end               
+end               
 
