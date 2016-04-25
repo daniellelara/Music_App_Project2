@@ -67,7 +67,7 @@ CarrierWave.configure do |config|
     config.storage = :file
     config.enable_processing = false
     config.root = "#{APP_ROOT}/tmp"
-    config.store_dir = "#{APP_ROOT}/public/uploads/images"
+    config.store_dir = "#{APP_ROOT}/public/uploads/"
   else
     config.storage = :fog
   end
