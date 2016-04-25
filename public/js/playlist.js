@@ -31,6 +31,7 @@ $(function() {
 
      $(".play-bt").click(function(){
       $audio[0].play();
+      
       $(".message").text("music started");
     })
      $(".pause-bt").click(function(){
