@@ -23,7 +23,7 @@
   <div class="pure-u-1 profile user-page">
   <hr/>
   <% if @user.image_identifier %>
-    <img class="profile-pic" src="/uploads/images/<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
+    <img class="profile-pic" src="<%= @user.image_identifier %>" alt="<%= @user.username %>'s image" width=150 height=150 align="left">
   <% else %>
     <img class="profile-pic" src="/images/default.png" alt="<%= @user.username %>'s image">
   <% end %>

@@ -27,7 +27,7 @@
 <% else %>
   <div class="pure-g playlist">
       <% if @playlist.image_identifier %>
-              <img class="media-object" src="/uploads/images/<%= @playlist.image_identifier %>" width=50 height=50>
+              <img class="media-object" src="<%= @playlist.image.url %>" width=50 height=50>
             <% else %>
               <img class="media-object" src="/uploads/H06-anika.jpg" width=50 height=50>
             <% end %>  

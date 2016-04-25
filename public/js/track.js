@@ -24,6 +24,7 @@ console.log("loaded");
     e.preventDefault();
     var idx = $(this).parents('.tracks').index();
     tracklist[idx].play();
+    console.log("playing track", tracklist[idx]);
     console.log(tracklist[idx], "playing");
     $(".message-track").eq(idx).text("playing " + " " + (tracklist[idx].src.split('/').splice(-1)[0]));
   });
